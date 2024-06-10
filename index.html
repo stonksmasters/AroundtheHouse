@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Around the House - Pressure Washing</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Around the House</div>
+            <ul>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Professional Pressure Washing Services</h1>
+            <p>Transforming your home with top-notch cleaning.</p>
+            <div class="cta-buttons">
+                <button onclick="window.location.href='#services'">Get a Quote</button>
+                <button onclick="window.location.href='#services'">Our Services</button>
+                <button onclick="window.location.href='#contact'">Contact Us</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <h2>Our Services</h2>
+        <div class="service-list">
+            <div class="service-item">
+                <h3>Driveway Cleaning</h3>
+                <p>Restore the appearance of your driveway with our expert cleaning services.</p>
+                <button onclick="window.location.href='/html/Driveway.html'">Get an Estimate</button>
+            </div>
+            <div class="service-item">
+                <h3>House Washing</h3>
+                <p>Make your home look new again with our comprehensive house washing.</p>
+                <button onclick="window.location.href='/html/EstimateHouse.html'">Get an Estimate</button>
+            </div>
+            <div class="service-item">
+                <h3>Deck and Patio Cleaning</h3>
+                <p>Bring back the beauty of your outdoor spaces with our specialized cleaning.</p>
+                <button onclick="window.location.href='/html/Deck.html'">Get an Estimate</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <h2>About Us</h2>
+        <p>At Around the House, we provide top-notch pressure washing services to keep your home looking its best. Our experienced team uses the latest equipment and techniques to deliver outstanding results every time.</p>
+        <button onclick="window.location.href='#contact'">Contact Us</button>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <form id="contact-form">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Around the House. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
