@@ -4,6 +4,7 @@ body {
     padding: 0;
     background-color: #fff;
     color: #333;
+    overflow-x: hidden; /* Prevent horizontal overflow */
 }
 
 header {
@@ -127,7 +128,10 @@ section h2 {
     width: 300px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
 }
 
 .services .service-item h3 {
@@ -138,6 +142,7 @@ section h2 {
 .services .service-item p {
     font-size: 1rem;
     margin-bottom: 1.5rem;
+    text-align: center;
 }
 
 .services .service-item button {
@@ -148,15 +153,12 @@ section h2 {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
-    position: absolute;
-    bottom: 1rem;
-    left: 50%;
-    transform: translateX(-50%);
+    margin-top: auto; /* Ensure button stays at the bottom */
 }
 
 .services .service-item button:hover {
     background-color: #ff7b3a;
-    transform: translateX(-50%) scale(1.05);
+    transform: scale(1.05);
 }
 
 .services .service-item:hover {
@@ -274,6 +276,8 @@ footer {
 
     .services .service-item {
         width: 80%;
+        padding: 1.5rem;
+        box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
     }
 
     form {
@@ -329,9 +333,12 @@ footer {
         font-size: 0.875rem;
         padding: 0.75rem;
     }
-       .services .service-item {
+
+    .services .service-item {
         width: 90%;
         padding: 1.5rem;
+        margin-bottom: 1.5rem;
+        box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
     }
 
     .services .service-item h3 {
@@ -389,10 +396,18 @@ footer {
         padding: 0.75rem 1rem;
     }
 
+    .services .service-list {
+        width: 100%; /* Ensure the service list container fits the screen */
+    }
+
     .services .service-item {
         width: 100%;
         margin-bottom: 1.5rem;
         padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
     }
 
     .services .service-item h3 {
@@ -401,11 +416,14 @@ footer {
 
     .services .service-item p {
         font-size: 1rem;
+        text-align: center;
+        margin-bottom: 1.5rem;
     }
 
     .services .service-item button {
         font-size: 1rem;
         padding: 0.75rem 1.5rem;
+        margin-top: auto; /* Ensure button stays at the bottom */
     }
 
     .about p {
@@ -449,52 +467,35 @@ footer {
         padding: 0.5rem 0.75rem;
     }
 
+    .services .service-list {
+        width: 100%; /* Ensure the service list container fits the screen */
+    }
+
     .services .service-item {
-        background-color: #fff;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        padding: 2rem;
-        width: 300px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s, box-shadow 0.3s;
-        position: relative;
+        width: 90%;
+        padding: 1.5rem;
+        margin-bottom: 1rem;
         display: flex;
         flex-direction: column;
         align-items: center;
+        box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
     }
-    
+
     .services .service-item h3 {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
+    }
+
+    .services .service-item p {
+        font-size: 0.75rem;
+        text-align: center;
         margin-bottom: 1rem;
     }
-    
-    .services .service-item p {
-        font-size: 1rem;
-        margin-bottom: 1.5rem;
-        text-align: center;
-    }
-    
+
     .services .service-item button {
-        background-color: #f96302;
-        color: #fff;
-        border: none;
-        padding: 0.75rem 1.5rem;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s, transform 0.3s;
-        margin-top: auto;  /* Ensures button stays at the bottom */
+        font-size: 0.875rem;
+        padding: 0.5rem 1rem;
+        margin-top: auto; /* Ensure button stays at the bottom */
     }
-    
-    .services .service-item button:hover {
-        background-color: #ff7b3a;
-        transform: scale(1.05);
-    }
-    
-    .services .service-item:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    }
-    
 
     .about p {
         font-size: 0.875rem;
