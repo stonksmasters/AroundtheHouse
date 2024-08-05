@@ -13,3 +13,23 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
     });
 });
+
+// Toggle the navigation menu
+const menuToggle = document.getElementById('menu-toggle');
+const navMenu = document.getElementById('nav-menu');
+const closeMenu = document.getElementById('close-menu');
+
+menuToggle.addEventListener('click', function() {
+    if (navMenu.classList.contains('show')) {
+        navMenu.classList.remove('show');
+        navMenu.classList.add('hide');
+    } else {
+        navMenu.classList.remove('hide');
+        navMenu.classList.add('show');
+    }
+});
+
+closeMenu.addEventListener('click', function() {
+    navMenu.classList.remove('show');
+    navMenu.classList.add('hide');
+});

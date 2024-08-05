@@ -20,6 +20,7 @@ body {
     background-color: var(--light-gray);
     color: var(--dark-gray);
     line-height: 1.6;
+    padding: 1rem;
 }
 
 header {
@@ -43,6 +44,22 @@ header {
 
 .logo-container img {
     height: 80px;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.menu-toggle .hamburger {
+    width: 25px;
+    height: 3px;
+    background: var(--dark-gray);
+    margin: 5px 0;
+    transition: 0.4s;
 }
 
 header nav {
@@ -108,6 +125,7 @@ header ul li a:hover {
     z-index: 2;
     max-width: 800px;
     margin: 0 auto;
+    padding: 1rem;
 }
 
 .hero h1 {
@@ -244,7 +262,7 @@ header ul li a:hover {
 }
 
 .contact button:hover {
-    background: var(--bay-of-many);
+    background: var (--bay-of-many);
 }
 
 footer {
@@ -273,4 +291,116 @@ footer p {
 
 .footer-links a:hover {
     text-decoration: underline;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    header ul {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        background: var(--white);
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        z-index: 1000;
+        border-top: 1px solid var(--light-gray);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        animation: slideDown 0.4s ease forwards;
+    }
+
+    header ul.show {
+        display: flex;
+    }
+
+    header ul.hide {
+        animation: slideUp 0.4s ease forwards;
+    }
+
+    header ul li {
+        margin: 1rem 0;
+    }
+
+    header ul li a {
+        font-size: 1.2rem;
+    }
+
+    header ul .close-btn {
+        display: none;
+    }
+
+    header ul.show .close-btn {
+        display: block;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .service-list, .testimonial-list, .gallery-list, .faq-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-item, .testimonial-item, .gallery-item, .faq-item {
+        max-width: 90%;
+        margin: 1rem 0;
+    }
+
+    .cta-buttons button {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .hero #hero-logo {
+        width: 150px;
+        height: 150px;
+    }
+
+    .hero-content {
+        padding: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero p {
+        font-size: 0.9rem;
+    }
+
+    .cta-buttons button {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+    }
+}
+
+/* Animations */
+@keyframes slideDown {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
 }
