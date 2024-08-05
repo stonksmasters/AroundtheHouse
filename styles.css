@@ -1,82 +1,113 @@
-body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
+:root {
+    --denim: #1577C1;
+    --jaffa: #F5733A;
+    --yellow-orange: #FCAC44;
+    --bay-of-many: #2C3B8C;
+    --white: #FFFFFF;
+    --light-gray: #F1F1F1;
+    --dark-gray: #333333;
+}
+
+/* General Styles */
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background-color: #fff;
-    color: #333;
-    overflow-x: hidden; /* Prevent horizontal overflow */
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* Ensure body takes at least full viewport height */
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: var(--light-gray);
+    color: var(--dark-gray);
+    line-height: 1.6;
 }
 
 header {
-    background-color: #002f5f;
-    color: #fff;
+    background: var(--white);
+    color: var(--dark-gray);
     padding: 1rem 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
-nav {
+.logo-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 0 2rem;
+    margin-bottom: 1rem;
 }
 
-nav .logo {
-    font-size: 1.75rem;
-    font-weight: bold;
+.logo-container img {
+    height: 80px;
 }
 
-nav ul {
+header nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+header ul {
     list-style: none;
     display: flex;
-    gap: 1.5rem;
+    justify-content: center;
+    padding: 0;
 }
 
-nav ul li {
-    display: inline;
+header ul li {
+    margin-left: 1rem;
 }
 
-nav ul li a {
-    color: #fff;
+header ul li a {
+    color: var(--dark-gray);
     text-decoration: none;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+    font-size: 1rem;
+    transition: color 0.3s;
 }
 
-nav ul li a:hover {
-    background-color: #f96302;
+header ul li a:hover {
+    color: var(--denim);
 }
 
 .hero {
-    background-color: #f96302;
-    color: #fff;
-    text-align: center;
-    padding: 6rem 2rem;
-    background-image: url('hero-background.jpg'); /* Add a background image */
-    background-size: cover;
-    background-position: center;
     position: relative;
+    background: var(--bay-of-many);
+    color: var(--white);
+    text-align: center;
+    padding: 5rem 1rem;
+    overflow: hidden;
 }
 
-.hero::after {
-    content: '';
+.hero #hero-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 300px;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    opacity: 0.3;
+}
+
+.hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.3); /* Add overlay */
+    background: rgba(0, 0, 0, 0.55); /* Semi-transparent overlay for readability */
+    z-index: 1;
 }
 
 .hero-content {
     position: relative;
-    z-index: 1;
-    max-width: 600px;
-    margin: auto;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .hero h1 {
@@ -85,437 +116,161 @@ nav ul li a:hover {
 }
 
 .hero p {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     margin-bottom: 2rem;
 }
 
 .cta-buttons button {
-    background-color: #002f5f;
-    color: #fff;
+    background: var(--jaffa);
     border: none;
     padding: 1rem 2rem;
     margin: 0.5rem;
-    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
     font-size: 1rem;
+    color: var(--white);
+    transition: background 0.3s;
+    border-radius: 4px;
 }
 
 .cta-buttons button:hover {
-    background-color: #004080;
-    transform: scale(1.05);
+    background: var(--yellow-orange);
 }
 
-section {
-    padding: 4rem 2rem;
-    text-align: center;
-    flex: 1; /* Allow sections to grow and take up remaining space */
-}
-
-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-}
-
-.services .service-list {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-}
-
-.services .service-item {
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 2rem;
-    width: 300px;
+.services, .about, .testimonials, .gallery, .faq, .contact {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    background: var(--white);
+    border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+    padding: 2rem;
 }
 
-.services .service-item h3 {
+.services h2, .about h2, .testimonials h2, .gallery h2, .faq h2, .contact h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--denim);
+    text-align: center;
+}
+
+.service-list, .testimonial-list, .gallery-list, .faq-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.service-item, .testimonial-item, .gallery-item, .faq-item {
+    background: var(--light-gray);
+    padding: 1rem;
+    margin: 1rem;
+    flex: 1;
+    min-width: 300px;
+    max-width: 30%;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.service-item:hover, .testimonial-item:hover, .gallery-item:hover, .faq-item:hover {
+    transform: translateY(-5px);
+}
+
+.service-item h3, .faq-item h3 {
     font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--bay-of-many);
+}
+
+.service-item p, .testimonial-item p, .faq-item p {
     margin-bottom: 1rem;
 }
 
-.services .service-item p {
+.service-item button {
+    background: var(--jaffa);
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
     font-size: 1rem;
-    margin-bottom: 1.5rem;
-    text-align: center;
+    color: var(--white);
+    transition: background 0.3s;
+    border-radius: 4px;
 }
 
-.services .service-item button {
-    background-color: #f96302;
-    color: #fff;
-    border: none;
-    padding: 0.75rem 1.5rem;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
-    margin-top: auto; /* Ensure button stays at the bottom */
+.service-item button:hover {
+    background: var(--yellow-orange);
 }
 
-.services .service-item button:hover {
-    background-color: #ff7b3a;
-    transform: scale(1.05);
-}
-
-.services .service-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.about p {
-    max-width: 700px;
-    margin: auto;
+.about p, .testimonials p, .faq p {
     font-size: 1.2rem;
-    line-height: 1.6;
-    margin-bottom: 2rem;
-}
-
-.about button {
-    background-color: #f96302;
-    color: #fff;
-    border: none;
-    padding: 0.75rem 1.5rem;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
-}
-
-.about button:hover {
-    background-color: #ff7b3a;
-    transform: scale(1.05);
+    margin-bottom: 1rem;
+    text-align: center;
 }
 
 .contact form {
-    max-width: 600px;
-    margin: auto;
-    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.contact .form-group {
-    margin-bottom: 1.5rem;
-}
-
-.contact label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-}
-
-.contact input, .contact textarea {
+.form-group {
+    margin-bottom: 1rem;
     width: 100%;
-    padding: 0.75rem;
-    border: 1px solid #ccc;
+}
+
+.form-group label {
+    margin-bottom: 0.5rem;
+    display: block;
+    color: var(--dark-gray);
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--dark-gray);
     border-radius: 5px;
-    font-size: 1rem;
 }
 
 .contact button {
-    background-color: #002f5f;
-    color: #fff;
+    background: var(--denim);
     border: none;
     padding: 1rem 2rem;
-    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
     font-size: 1rem;
+    color: var(--white);
+    transition: background 0.3s;
+    border-radius: 4px;
+    margin-top: 1rem;
 }
 
 .contact button:hover {
-    background-color: #004080;
+    background: var(--bay-of-many);
 }
 
 footer {
-    background-color: #002f5f;
-    color: #fff;
+    background: var(--dark-gray);
+    color: var(--white);
     text-align: center;
     padding: 1rem 0;
-    width: 100%;
-    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
-    margin-top: auto; /* Push footer to the bottom when the page content is short */
+    margin-top: 2rem;
 }
 
-/* Media Queries */
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-        padding: 0;
-    }
-
-    nav ul li {
-        margin-bottom: 1rem;
-    }
-
-    .hero-content {
-        padding: 1rem;
-    }
-
-    .hero h1 {
-        font-size: 2rem;
-    }
-
-    .hero p {
-        font-size: 1rem;
-    }
-
-    .cta-buttons button {
-        width: 100%;
-        padding: 1rem;
-        margin: 0.5rem 0;
-    }
-
-    .services .service-list {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .services .service-item {
-        width: 80%;
-        padding: 1.5rem;
-        box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
-    }
-
-    form {
-        width: 90%;
-        margin: auto;
-    }
-
-    footer {
-        padding: 0.5rem 0;
-    }
+footer p {
+    margin: 0;
 }
 
-@media (max-width: 480px) {
-    header {
-        padding: 1rem;
-        text-align: center;
-    }
-
-    nav {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    nav .logo {
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
-    }
-
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 0.5rem;
-    }
-
-    nav ul li {
-        margin-bottom: 0;
-    }
-
-    nav ul li a {
-        padding: 0.5rem 1rem;
-        font-size: 1rem;
-    }
-
-    .hero h1 {
-        font-size: 1.5rem;
-    }
-
-    .hero p {
-        font-size: 0.875rem;
-    }
-
-    .cta-buttons button {
-        font-size: 0.875rem;
-        padding: 0.75rem;
-    }
-
-    .services .service-item {
-        width: 90%;
-        padding: 1.5rem;
-        margin-bottom: 1.5rem;
-        box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
-    }
-
-    .services .service-item h3 {
-        font-size: 1.25rem;
-    }
-
-    .services .service-item p {
-        font-size: 0.875rem;
-    }
-
-    .services .service-item button {
-        font-size: 0.875rem;
-        padding: 0.5rem 1rem;
-    }
-
-    .about p {
-        font-size: 1rem;
-    }
-
-    .about button {
-        font-size: 0.875rem;
-        padding: 0.75rem 1rem;
-    }
-
-    .contact input, .contact textarea {
-        font-size: 0.875rem;
-        padding: 0.5rem;
-    }
-
-    .contact button {
-        font-size: 0.875rem;
-        padding: 0.75rem;
-    }
+.footer-links {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
 }
 
-/* Specific adjustments for iPhones and Android devices */
-@media only screen and (max-width: 480px) and (orientation: portrait) {
-    body {
-        padding: 1rem;
-    }
-
-    nav .logo {
-        font-size: 1.5rem;
-    }
-
-    .hero h1 {
-        font-size: 1.75rem;
-    }
-
-    .hero p {
-        font-size: 1rem;
-    }
-
-    .cta-buttons button {
-        padding: 0.75rem 1rem;
-    }
-
-    .services .service-list {
-        width: 100%; /* Ensure the service list container fits the screen */
-    }
-
-    .services .service-item {
-        width: 100%;
-        margin-bottom: 1.5rem;
-        padding: 1.5rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
-    }
-
-    .services .service-item h3 {
-        font-size: 1.5rem;
-    }
-
-    .services .service-item p {
-        font-size: 1rem;
-        text-align: center;
-        margin-bottom: 1.5rem;
-    }
-
-    .services .service-item button {
-        font-size: 1rem;
-        padding: 0.75rem 1.5rem;
-        margin-top: auto; /* Ensure button stays at the bottom */
-    }
-
-    .about p {
-        font-size: 1.1rem;
-    }
-
-    .about button {
-        font-size: 1rem;
-        padding: 0.75rem 1.5rem;
-    }
-
-    .contact input, .contact textarea {
-        font-size: 1rem;
-        padding: 0.75rem;
-    }
-
-    .contact button {
-        font-size: 1rem;
-        padding: 0.75rem 1.5rem;
-    }
+.footer-links a {
+    color: var(--white);
+    margin: 0 0.5rem;
+    text-decoration: none;
 }
 
-@media only screen and (max-width: 480px) and (orientation: landscape) {
-    body {
-        padding: 0.5rem;
-    }
-
-    nav .logo {
-        font-size: 1.25rem;
-    }
-
-    .hero h1 {
-        font-size: 1.25rem;
-    }
-
-    .hero p {
-        font-size: 0.75rem;
-    }
-
-    .cta-buttons button {
-        padding: 0.5rem 0.75rem;
-    }
-
-    .services .service-list {
-        width: 100%; /* Ensure the service list container fits the screen */
-    }
-
-    .services .service-item {
-        width: 90%;
-        padding: 1.5rem;
-        margin-bottom: 1rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
-    }
-
-    .services .service-item h3 {
-        font-size: 1.25rem;
-    }
-
-    .services .service-item p {
-        font-size: 0.75rem;
-        text-align: center;
-        margin-bottom: 1rem;
-    }
-
-    .services .service-item button {
-        font-size: 0.875rem;
-        padding: 0.5rem 1rem;
-        margin-top: auto; /* Ensure button stays at the bottom */
-    }
-
-    .about p {
-        font-size: 0.875rem;
-    }
-
-    .about button {
-        font-size: 0.875rem;
-        padding: 0.5rem 1rem;
-    }
-
-    .contact input, .contact textarea {
-        font-size: 0.875rem;
-        padding: 0.5rem;
-    }
-
-    .contact button {
-        font-size: 0.875rem;
-        padding: 0.5rem 1rem;
-    }
+.footer-links a:hover {
+    text-decoration: underline;
 }

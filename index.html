@@ -8,17 +8,23 @@
 </head>
 <body>
     <header>
+        <div class="logo-container">
+            <img id="logo" src="Color logo - no background.png" alt="Around the House Logo"> <!-- Still image of the logo -->
+        </div>
         <nav>
-            <div class="logo">Around the House</div>
             <ul>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#about">About Us</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#faq">FAQ</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
     
     <section class="hero">
+        <div class="hero-overlay"></div>
         <div class="hero-content">
             <h1>Professional Pressure Washing Services</h1>
             <p>Transforming your home with top-notch cleaning.</p>
@@ -57,6 +63,46 @@
         <button onclick="window.location.href='#contact'">Contact Us</button>
     </section>
 
+    <section id="testimonials" class="testimonials">
+        <h2>Testimonials</h2>
+        <div class="testimonial-list">
+            <div class="testimonial-item">
+                <p>"Great service! My driveway looks brand new. Highly recommended!" - John D.</p>
+            </div>
+            <div class="testimonial-item">
+                <p>"Excellent job on our patio. The team was professional and efficient." - Sarah K.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery-list">
+            <div class="gallery-item">
+                <img src="before1.jpg" alt="Before cleaning">
+                <img src="after1.jpg" alt="After cleaning">
+            </div>
+            <div class="gallery-item">
+                <img src="before2.jpg" alt="Before cleaning">
+                <img src="after2.jpg" alt="After cleaning">
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-list">
+            <div class="faq-item">
+                <h3>What areas do you serve?</h3>
+                <p>We serve the entire metropolitan area and surrounding suburbs.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How much does it cost?</h3>
+                <p>Our pricing is competitive and varies depending on the service. Contact us for a free estimate.</p>
+            </div>
+        </div>
+    </section>
+
     <section id="contact" class="contact">
         <h2>Contact Us</h2>
         <form id="contact-form">
@@ -78,6 +124,12 @@
 
     <footer>
         <p>&copy; 2024 Around the House. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+        </div>
     </footer>
 
     <script src="script.js"></script>
