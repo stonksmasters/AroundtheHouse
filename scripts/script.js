@@ -33,3 +33,43 @@ closeMenu.addEventListener('click', function() {
     navMenu.classList.remove('show');
     navMenu.classList.add('hide');
 });
+
+document.querySelectorAll('.faq-item h3').forEach(item => {
+    item.addEventListener('click', () => {
+        const parent = item.parentElement;
+        document.querySelectorAll('.faq-item').forEach(faq => {
+            if (faq !== parent) faq.classList.remove('active');
+        });
+        parent.classList.toggle('active');
+    });
+});
+let currentSlide = 0;
+const slides = document.querySelectorAll('.testimonial-item');
+const dots = document.querySelectorAll('.dot');
+
+function showSlide(index) {
+    slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+        dots[i].classList.toggle('active', i === index);
+    });
+}
+
+document.getElementById('next').addEventListener('click', () => {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+});
+
+document.getElementById('prev').addEventListener('click', () => {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+});
+
+dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+        currentSlide = index;
+        showSlide(currentSlide);
+    });
+});
+
+// Initialize the first slide as active
+showSlide(currentSlide);
