@@ -34,6 +34,7 @@ closeMenu.addEventListener('click', function() {
     navMenu.classList.add('hide');
 });
 
+// FAQ Toggle Functionality
 document.querySelectorAll('.faq-item h3').forEach(item => {
     item.addEventListener('click', () => {
         const parent = item.parentElement;
@@ -43,20 +44,37 @@ document.querySelectorAll('.faq-item h3').forEach(item => {
         parent.classList.toggle('active');
     });
 });
+
+// Testimonial Carousel Functionality
 document.addEventListener("DOMContentLoaded", function () {
-    const items = document.querySelectorAll(".testimonial-item");
-    let currentItem = 0;
+    const testimonialItems = document.querySelectorAll(".testimonial-item");
+    let currentTestimonial = 0;
 
-    function showNextItem() {
-        items[currentItem].classList.remove("active");
-        items[currentItem].classList.add("previous");
+    function showNextTestimonial() {
+        testimonialItems[currentTestimonial].classList.remove("active");
+        testimonialItems[currentTestimonial].classList.add("previous");
 
-        currentItem = (currentItem + 1) % items.length;
+        currentTestimonial = (currentTestimonial + 1) % testimonialItems.length;
 
-        items[currentItem].classList.add("active");
-        items[currentItem].classList.remove("previous");
+        testimonialItems[currentTestimonial].classList.add("active");
+        testimonialItems[currentTestimonial].classList.remove("previous");
     }
 
-    setInterval(showNextItem, 5000); // Adjust the timing as needed
-});
+    setInterval(showNextTestimonial, 5000); // Adjust the timing as needed
 
+    // Gallery Carousel Functionality
+    const galleryItems = document.querySelectorAll(".gallery-item");
+    let currentGallery = 0;
+
+    function showNextGalleryItem() {
+        galleryItems[currentGallery].classList.remove("active");
+        galleryItems[currentGallery].classList.add("previous");
+
+        currentGallery = (currentGallery + 1) % galleryItems.length;
+
+        galleryItems[currentGallery].classList.add("active");
+        galleryItems[currentGallery].classList.remove("previous");
+    }
+
+    setInterval(showNextGalleryItem, 5000); // Adjust the timing as needed
+});
