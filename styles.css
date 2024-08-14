@@ -118,6 +118,11 @@ header {
     text-align: center;
     padding: 5rem 1rem;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Full viewport height */
 }
 
 .hero-overlay {
@@ -139,6 +144,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center; /* Center align content for balance */
+    text-align: center;
 }
 
 .hero h1 {
@@ -147,29 +153,40 @@ header {
     margin-bottom: 1rem;
     letter-spacing: 1px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    line-height: 1.2; /* Ensure tight spacing for impact */
 }
 
 .hero p {
     font-size: 1.2rem;
     margin-bottom: 2rem;
+    line-height: 1.5;
+    max-width: 90%; /* Ensure text doesn't stretch too wide */
 }
 
+/* CTA Buttons */
 .cta-buttons {
     display: flex;
     justify-content: center;
     gap: 1rem;
+    width: 100%;
+    max-width: 400px; /* Limit button container width for better alignment */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
 
-.cta-buttons button.primary {
-    background: var(--denim);
-    width: 1rem;
-    padding: 1.2rem 2.5rem;
+.cta-buttons button {
+    padding: 1rem 2rem;
     font-size: 1.1rem;
     color: var(--white);
     border: none;
     border-radius: 4px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+    flex: 1; /* Allow buttons to stretch evenly */
+    min-width: 120px; /* Ensure buttons don't shrink too much */
+}
+
+.cta-buttons button.primary {
+    background: var(--denim);
 }
 
 .cta-buttons button.primary:hover {
@@ -180,13 +197,6 @@ header {
 
 .cta-buttons button.secondary {
     background: var(--jaffa);
-    padding: 1rem 2rem;
-    font-size: 1rem;
-    color: var(--white);
-    border: none;
-    border-radius: 4px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
 }
 
 .cta-buttons button.secondary:hover {
@@ -321,17 +331,15 @@ section h2::after {
     font-style: italic;
 }
 
-/* Testimonial Carousel */
 .testimonial-carousel {
     position: relative;
     overflow: hidden; /* Hide overflow to create the sliding effect */
     width: 100%;
     max-width: 800px;
     margin: 0 auto;
-    padding: 2rem 1rem; /* Add padding for better spacing */
-    background-color: var(--white); /* Background to contrast with the page */
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    height: 250px; /* Adjust height as needed */
+    display: flex;
+    align-items: center; /* Center align items vertically */
 }
 
 /* Each testimonial item in the carousel */
@@ -341,49 +349,32 @@ section h2::after {
     opacity: 0; /* Start with hidden testimonials */
     position: absolute;
     top: 0;
-    left: 0;
+    left: 100%; /* Position testimonials off-screen to the right */
     width: 100%;
-    height: auto;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: var(--light-gray); /* Light background for contrast */
-    padding: 2rem;
+    background-color: var(--light-gray); /* Consistent background color */
+    padding: 1rem;
     box-sizing: border-box;
     border-radius: 8px;
 }
 
 .testimonial-item.active {
     opacity: 1; /* Show the active testimonial */
-    position: relative; /* Place it relative to the others */
+    left: 0; /* Bring the active testimonial to the center */
 }
 
-.testimonial-item p {
-    font-size: 1.2rem;
-    margin-bottom: 1.5rem; /* Increase spacing for better readability */
-    line-height: 1.5;
-    color: var(--dark-gray);
-    text-align: center;
-    max-width: 90%; /* Limit width for better text alignment */
+.testimonial-item.previous {
+    left: -100%; /* Move the previous testimonial off-screen to the left */
+    opacity: 0; /* Hide the previous testimonial */
 }
 
-.testimonial-item .before-after {
-    display: flex;
-    justify-content: center; /* Center images side by side */
-    align-items: center; /* Center align vertically */
-    gap: 1rem;
-    max-width: 100%; /* Full width to make the most of the space */
-    width: 100%;
-    margin-top: 1rem; /* Add margin to separate images from text */
-}
-
-.testimonial-item .before-after img {
-    width: 48%; /* Adjust width to allow two images to fit side by side */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    object-fit: cover; /* Ensure images cover the area without distortion */
+.testimonial-item.next {
+    left: 100%; /* Position the next testimonial off-screen to the right */
+    opacity: 0; /* Hide the next testimonial */
 }
 
 /* Gallery Section */

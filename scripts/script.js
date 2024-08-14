@@ -42,20 +42,21 @@ document.querySelectorAll('.faq-item h3').forEach(item => {
         });
         parent.classList.toggle('active');
     });
-});
-document.addEventListener("DOMContentLoaded", function () {
-    let testimonials = document.querySelectorAll(".testimonial-item");
+});document.addEventListener('DOMContentLoaded', function () {
+    const testimonials = document.querySelectorAll('.testimonial-item');
     let currentIndex = 0;
 
     function showNextTestimonial() {
-        testimonials[currentIndex].classList.remove("active");
+        // Hide the current testimonial
+        testimonials[currentIndex].classList.remove('active');
+
+        // Increment the index to show the next testimonial
         currentIndex = (currentIndex + 1) % testimonials.length;
-        testimonials[currentIndex].classList.add("active");
+
+        // Show the next testimonial
+        testimonials[currentIndex].classList.add('active');
     }
 
-    // Set an interval to change testimonials every 5 seconds
-    setInterval(showNextTestimonial, 5000);
-    
-    // Initialize first testimonial as active
-    testimonials[currentIndex].classList.add("active");
+    // Set interval for automatic testimonial rotation
+    setInterval(showNextTestimonial, 5000); // Change every 5 seconds
 });
