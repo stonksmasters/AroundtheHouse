@@ -33,6 +33,52 @@ body {
     flex-direction: column;
     align-items: center;
 }
+/* General Styles for Form Pages */
+.contact {
+    padding: 3rem 0;
+    background: var(--white);
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--dark-gray);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--dark-gray);
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+button[type="submit"] {
+    background: var(--denim);
+    color: var(--white);
+    border: none;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.3s, transform 0.3s;
+}
+
+button[type="submit"]:hover {
+    background: var(--bay-of-many);
+    transform: translateY(-2px);
+}
 
 /* Thank You Page Styles */
 .thank-you-container {
