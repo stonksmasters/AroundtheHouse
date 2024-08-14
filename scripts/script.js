@@ -8,9 +8,21 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
 
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
+        const headerOffset = document.querySelector('header').offsetHeight;
+        const element = document.querySelector(this.getAttribute('href'));
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+            top: offsetPosition,
             behavior: 'smooth'
         });
+
+        // Close the mobile menu after clicking an anchor link
+        if (navMenu.classList.contains('show')) {
+            navMenu.classList.remove('show');
+            navMenu.classList.add('hide');
+        }
     });
 });
 
@@ -18,6 +30,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 const menuToggle = document.getElementById('menu-toggle');
 const navMenu = document.getElementById('nav-menu');
 const closeMenu = document.getElementById('close-menu');
+const header = document.querySelector('header');
+
+function adjustNavMenuPosition() {
+    navMenu.style.top = `${header.offsetHeight}px`;
+}
 
 menuToggle.addEventListener('click', function() {
     if (navMenu.classList.contains('show')) {
@@ -26,15 +43,14 @@ menuToggle.addEventListener('click', function() {
     } else {
         navMenu.classList.remove('hide');
         navMenu.classList.add('show');
+        adjustNavMenuPosition(); // Adjust the menu position when opened
     }
 });
-
 closeMenu.addEventListener('click', function() {
     navMenu.classList.remove('show');
     navMenu.classList.add('hide');
 });
 
-// FAQ Toggle Functionality
 document.querySelectorAll('.faq-item h3').forEach(item => {
     item.addEventListener('click', () => {
         const parent = item.parentElement;
@@ -45,35 +61,33 @@ document.querySelectorAll('.faq-item h3').forEach(item => {
     });
 });
 
-// Testimonial Carousel Functionality
 document.addEventListener("DOMContentLoaded", function () {
     const testimonialItems = document.querySelectorAll(".testimonial-item");
-    let currentTestimonial = 0;
+    let currentTestimonialItem = 0;
 
-    function showNextTestimonial() {
-        testimonialItems[currentTestimonial].classList.remove("active");
-        testimonialItems[currentTestimonial].classList.add("previous");
+    function showNextTestimonialItem() {
+        testimonialItems[currentTestimonialItem].classList.remove("active");
+        testimonialItems[currentTestimonialItem].classList.add("previous");
 
-        currentTestimonial = (currentTestimonial + 1) % testimonialItems.length;
+        currentTestimonialItem = (currentTestimonialItem + 1) % testimonialItems.length;
 
-        testimonialItems[currentTestimonial].classList.add("active");
-        testimonialItems[currentTestimonial].classList.remove("previous");
+        testimonialItems[currentTestimonialItem].classList.add("active");
+        testimonialItems[currentTestimonialItem].classList.remove("previous");
     }
 
-    setInterval(showNextTestimonial, 5000); // Adjust the timing as needed
+    setInterval(showNextTestimonialItem, 5000); // Adjust the timing as needed
 
-    // Gallery Carousel Functionality
     const galleryItems = document.querySelectorAll(".gallery-item");
-    let currentGallery = 0;
+    let currentGalleryItem = 0;
 
     function showNextGalleryItem() {
-        galleryItems[currentGallery].classList.remove("active");
-        galleryItems[currentGallery].classList.add("previous");
+        galleryItems[currentGalleryItem].classList.remove("active");
+        galleryItems[currentGalleryItem].classList.add("previous");
 
-        currentGallery = (currentGallery + 1) % galleryItems.length;
+        currentGalleryItem = (currentGalleryItem + 1) % galleryItems.length;
 
-        galleryItems[currentGallery].classList.add("active");
-        galleryItems[currentGallery].classList.remove("previous");
+        galleryItems[currentGalleryItem].classList.add("active");
+        galleryItems[currentGalleryItem].classList.remove("previous");
     }
 
     setInterval(showNextGalleryItem, 5000); // Adjust the timing as needed
