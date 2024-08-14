@@ -300,41 +300,48 @@ section h2::after {
 
 
 /* About Section */
+/* About Section */
 .about-container {
     display: flex;
-    flex-direction: column; /* Stack on smaller screens */
-    align-items: center;
-    justify-content: space-between;
-    text-align: center;
-    gap: 1.5rem;
+    justify-content: center; /* Center the content horizontally */
+    text-align: center; /* Center align text */
+    padding: 2rem 1rem;
 }
 
 .about-text {
-    max-width: 600px; /* Adjust to fit content */
+    max-width: 800px; /* Adjust to fit content */
     text-align: center; /* Center align text */
 }
 
-.about-cta {
-    display: flex;
-    justify-content: center;
-    margin-top: 1.5rem; /* Space between text and button */
+.about-text h2 {
+    margin-bottom: 1rem;
 }
 
-.about-cta button {
+.about-text p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem; /* Space between text and button */
+    flex-wrap: wrap; /* Ensure wrapping on smaller screens */
+}
+
+.inline-cta {
     background: var(--denim);
     color: var(--white);
     border: none;
     border-radius: 4px;
-    padding: 1rem 2rem;
-    font-size: 1.1rem;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
     cursor: pointer;
     transition: background 0.3s, transform 0.3s;
+    margin-top: 0.5rem; /* Add some space above the button */
 }
 
-.about-cta button:hover {
+.inline-cta:hover {
     background: var(--yellow-orange);
     transform: scale(1.05);
 }
+
 
 .testimonial-carousel {
     position: relative;
@@ -561,7 +568,19 @@ footer p {
 .footer-social a:hover img {
     transform: scale(1.2); /* Slight zoom on hover for interaction feedback */
 }
+@media (min-width: 768px) {
+    .about-container {
+        text-align: left; /* Align text to the left on larger screens */
+    }
 
+    .about-text p {
+        justify-content: flex-start; /* Align text and button inline on larger screens */
+    }
+
+    .inline-cta {
+        margin-top: 0; /* Remove extra margin on larger screens */
+    }
+}
 /* Mobile Styles for Responsiveness */
 @media (max-width: 768px) {
     .menu-toggle {
@@ -656,18 +675,9 @@ footer p {
         font-size: 1rem;
         color: var(--dark-gray);
     }
-    .about-container {
-        flex-direction: row; /* Align side by side on larger screens */
-        text-align: left; /* Align text to the left on larger screens */
-    }
-
-    .about-text, .about-cta {
-        flex: 1; /* Ensure both elements take up equal space */
-    }
-
-    .about-cta {
-        justify-content: flex-end; /* Align button to the right */
-        margin-top: 0; /* Remove extra margin on larger screens */
+    .about-text p {
+        flex-direction: column; /* Stack text and button vertically on smaller screens */
+        align-items: center;
     }
     .testimonial-item p {
         font-size: 1rem; /* Slightly smaller text for mobile */
@@ -769,12 +779,9 @@ footer p {
     .service-item p {
         font-size: 0.9rem;
     }
-    .about-container {
-        text-align: center; /* Keep text centered on smaller screens */
-    }
-
-    .about-cta {
-        justify-content: center; /* Center button on smaller screens */
+    .inline-cta {
+        width: 100%; /* Full width button on small screens */
+        padding: 0.8rem 1.5rem; /* Adjust padding */
     }
     .testimonial-item p {
         font-size: 0.9rem; /* Further reduce text size for very small screens */
