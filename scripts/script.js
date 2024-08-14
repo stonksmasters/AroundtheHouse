@@ -43,33 +43,19 @@ document.querySelectorAll('.faq-item h3').forEach(item => {
         parent.classList.toggle('active');
     });
 });
-let currentSlide = 0;
-const slides = document.querySelectorAll('.testimonial-item');
-const dots = document.querySelectorAll('.dot');
+document.addEventListener("DOMContentLoaded", function () {
+    let testimonials = document.querySelectorAll(".testimonial-item");
+    let currentIndex = 0;
 
-function showSlide(index) {
-    slides.forEach((slide, i) => {
-        slide.classList.toggle('active', i === index);
-        dots[i].classList.toggle('active', i === index);
-    });
-}
+    function showNextTestimonial() {
+        testimonials[currentIndex].classList.remove("active");
+        currentIndex = (currentIndex + 1) % testimonials.length;
+        testimonials[currentIndex].classList.add("active");
+    }
 
-document.getElementById('next').addEventListener('click', () => {
-    currentSlide = (currentSlide + 1) % slides.length;
-    showSlide(currentSlide);
+    // Set an interval to change testimonials every 5 seconds
+    setInterval(showNextTestimonial, 5000);
+    
+    // Initialize first testimonial as active
+    testimonials[currentIndex].classList.add("active");
 });
-
-document.getElementById('prev').addEventListener('click', () => {
-    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-    showSlide(currentSlide);
-});
-
-dots.forEach((dot, index) => {
-    dot.addEventListener('click', () => {
-        currentSlide = index;
-        showSlide(currentSlide);
-    });
-});
-
-// Initialize the first slide as active
-showSlide(currentSlide);

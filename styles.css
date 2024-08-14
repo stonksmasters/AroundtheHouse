@@ -162,6 +162,7 @@ header {
 
 .cta-buttons button.primary {
     background: var(--denim);
+    width: 1rem;
     padding: 1.2rem 2.5rem;
     font-size: 1.1rem;
     color: var(--white);
@@ -320,100 +321,69 @@ section h2::after {
     font-style: italic;
 }
 
-/* Testimonials Section */
-.testimonials {
-    margin-top: 2rem;
-}
-
-.testimonial-slideshow {
+/* Testimonial Carousel */
+.testimonial-carousel {
     position: relative;
+    overflow: hidden; /* Hide overflow to create the sliding effect */
     width: 100%;
     max-width: 800px;
     margin: 0 auto;
-    overflow: hidden;
-    text-align: center;
+    padding: 2rem 1rem; /* Add padding for better spacing */
+    background-color: var(--white); /* Background to contrast with the page */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
+/* Each testimonial item in the carousel */
 .testimonial-item {
-    display: none;
+    min-width: 100%; /* Each testimonial takes up the full width of the container */
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out; /* Smooth transition for both position and opacity */
+    opacity: 0; /* Start with hidden testimonials */
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    transition: opacity 1s ease-in-out, transform 0.5s ease-in-out;
-    background: var(--light-gray);
-    border-radius: 12px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--light-gray); /* Light background for contrast */
     padding: 2rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    opacity: 0;
-    transform: translateX(100%);
+    box-sizing: border-box;
+    border-radius: 8px;
 }
 
 .testimonial-item.active {
-    display: block;
-    position: relative;
-    opacity: 1;
-    transform: translateX(0);
-}
-
-.testimonial-item + .testimonial-item {
-    transform: translateX(105%);
+    opacity: 1; /* Show the active testimonial */
+    position: relative; /* Place it relative to the others */
 }
 
 .testimonial-item p {
     font-size: 1.2rem;
-    margin-bottom: 1rem;
-    line-height: 1.8;
+    margin-bottom: 1.5rem; /* Increase spacing for better readability */
+    line-height: 1.5;
+    color: var(--dark-gray);
+    text-align: center;
+    max-width: 90%; /* Limit width for better text alignment */
 }
 
 .testimonial-item .before-after {
     display: flex;
-    justify-content: space-around;
+    justify-content: center; /* Center images side by side */
+    align-items: center; /* Center align vertically */
     gap: 1rem;
+    max-width: 100%; /* Full width to make the most of the space */
+    width: 100%;
+    margin-top: 1rem; /* Add margin to separate images from text */
 }
 
 .testimonial-item .before-after img {
-    width: 45%;
+    width: 48%; /* Adjust width to allow two images to fit side by side */
+    height: auto; /* Maintain aspect ratio */
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.testimonial-controls {
-    text-align: center;
-    margin-top: 1rem;
-}
-
-.testimonial-controls button {
-    background: none;
-    border: none;
-    font-size: 2rem;
-    cursor: pointer;
-    color: var(--denim);
-    margin: 0 0.5rem;
-    transition: color 0.3s, transform 0.3s;
-}
-
-.testimonial-controls button:hover {
-    color: var(--jaffa);
-    transform: scale(1.1);
-}
-
-.testimonial-indicators {
-    text-align: center;
-    margin-top: 1rem;
-}
-
-.testimonial-indicators .dot {
-    display: inline-block;
-    width: 12px;
-    height: 12px;
-    margin: 0 4px;
-    background-color: var(--dark-gray);
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.testimonial-indicators .dot.active {
-    background-color: var(--denim);
+    object-fit: cover; /* Ensure images cover the area without distortion */
 }
 
 /* Gallery Section */
@@ -536,64 +506,64 @@ section h2::after {
     transform: translateY(-2px);
 }
 
-/* Footer */
+/* Enhanced Footer with Social Media Icons */
 footer {
-    background: var(--dark-gray);
-    color: var(--white);
+    background: var(--denim); /* Match footer background with the primary site color */
+    color: var(--white); /* White text for contrast against the dark background */
     text-align: center;
-    padding: 1.5rem 0;
+    padding: 2rem 1rem; /* Increased padding for better touch targets */
     margin-top: 2rem;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow to give depth */
+    font-size: 1rem; /* Ensure consistent text size */
+    line-height: 1.5; /* Spacing for readability */
 }
 
 footer p {
     margin: 0;
+    font-size: 1rem; /* Consistent font size */
 }
 
 .footer-links {
-    margin-top: 1rem;
+    margin-top: 1.5rem;
     display: flex;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
     justify-content: center;
-    gap: 1rem;
+    gap: 1.5rem; /* Space out links for easier tapping on mobile */
 }
 
 .footer-links a {
     color: var(--white);
     text-decoration: none;
+    font-size: 1rem;
     transition: color 0.3s;
 }
 
 .footer-links a:hover {
     text-decoration: underline;
-    color: var(--jaffa);
+    color: var(--yellow-orange);
 }
 
 .footer-social {
-    margin-top: 1rem;
+    margin-top: 1.5rem;
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: 1.5rem; /* Increased spacing for clarity */
 }
 
 .footer-social a {
     display: inline-block;
+    transition: transform 0.3s ease;
 }
 
 .footer-social img {
-    width: 24px;
-    height: 24px;
+    width: 28px; /* Adjust icon size for better accessibility */
+    height: 28px;
     transition: transform 0.3s ease;
 }
 
 .footer-social a:hover img {
-    transform: scale(1.2);
-}
-
-/* Keyboard Navigation */
-.focusable:focus {
-    outline: 3px solid var(--denim);
-    background-color: var(--yellow-orange);
+    transform: scale(1.2); /* Slight zoom on hover for interaction feedback */
 }
 
 /* Mobile Styles for Responsiveness */
@@ -635,32 +605,40 @@ footer p {
     }
 
     .hero h1 {
-        font-size: 2rem; /* Adjusted for better readability */
+        font-size: 2rem;
+        line-height: 1.2; /* Adjust line height for better readability */
     }
 
     .hero p {
-        font-size: 1rem; /* This remains as it was already optimal */
-        margin-bottom: 1.5rem; /* Adding more space below the paragraph */
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.5; /* Ensure proper spacing between lines */
     }
 
     .cta-buttons {
-        flex-direction: column; /* Stack buttons vertically */
-        gap: 0.5rem; /* Reduce gap between buttons */
+        display: flex;
+        justify-content: space-between;
+        gap: 0.5rem;
+        max-width: 100%;
+        margin: 0 auto;
     }
 
     .cta-buttons button {
-        padding: 0.5rem 1rem; /* Existing padding */
-        font-size: 0.9rem; /* Existing font size */
-        width: 100%; /* Make buttons full-width on mobile */
-        max-width: 280px; /* Set a maximum width to ensure buttons aren't too wide */
-        margin: 0 auto; /* Center the buttons */
+        padding: 0.6rem 0.8rem; /* Slightly increase padding for better button feel */
+        font-size: .7rem; /* Adjust font size for better readability */
+        line-height: .8; /* Ensure text is vertically centered */
+        flex: 1;
+        max-width: 32%;
+        min-width: 90px;
+        box-sizing: border-box;
+        text-align: center;
     }
 
     .hero-content {
         padding: 0.5rem;
         max-width: 100%;
+        text-align: center;
     }
-
     .service-list {
         flex-direction: column;
         align-items: center;
@@ -683,30 +661,19 @@ footer p {
         color: var(--dark-gray);
     }
 
-    .testimonial-slideshow {
-        max-width: 100%;
+    .testimonial-item p {
+        font-size: 1rem; /* Slightly smaller text for mobile */
     }
 
-    .testimonial-item {
-        padding: 1.5rem;
-        background: var(--light-gray);
+    .testimonial-item .before-after {
+        justify-content: space-between; /* Keep images side by side and spaced out */
+        align-items: center; /* Center align images vertically */
+        gap: 0.5rem; /* Reduce gap for mobile screens */
     }
 
-    .testimonial-controls button {
-        font-size: 1.5rem;
-        color: var(--denim);
+    .testimonial-item .before-after img {
+        width: 45%; /* Ensure images remain side by side on mobile */
     }
-
-    .testimonial-indicators .dot {
-        width: 10px;
-        height: 10px;
-        background-color: var(--dark-gray);
-    }
-
-    .testimonial-indicators .dot.active {
-        background-color: var(--denim);
-    }
-
     .gallery-list {
         flex-direction: column;
         align-items: center;
@@ -747,34 +714,44 @@ footer p {
     .contact button {
         background: var(--denim);
     }
-
     footer {
-        padding: 1rem 0;
+        padding: 1.5rem 1rem; /* Adjust padding for mobile */
+        font-size: 0.95rem; /* Slightly smaller text for better fit */
     }
 
     .footer-links {
-        flex-direction: column;
-        gap: 0.5rem;
+        flex-direction: column; /* Stack links vertically for easier tapping */
+        align-items: center; /* Center align on smaller screens */
+        gap: 1rem; /* Adjust gap for better spacing */
+    }
+
+    .footer-social {
+        margin-top: 1rem;
+        gap: 1rem; /* Reduce gap slightly for better fit */
     }
 
     .footer-social img {
-        width: 20px;
-        height: 20px;
+        width: 24px; /* Adjust icon size for smaller screens */
+        height: 24px;
     }
 }
 
 @media (max-width: 480px) {
     .hero h1 {
-        font-size: 1.5rem; /* Further reduce font size for smaller screens */
+        font-size: 1.8rem;
+        line-height: 1.2;
     }
 
     .cta-buttons {
-        gap: 0.3rem; /* Reduce gap even more on very small screens */
+        gap: 0.4rem;
     }
 
     .cta-buttons button {
-        padding: 0.4rem 0.8rem; /* Slightly reduce padding */
-        font-size: 0.8rem; /* Slightly reduce font size */
+        padding: 0.5rem 0.7rem;
+        font-size: 0.95rem; /* Adjust font size slightly for consistency */
+        line-height: 1.2;
+        flex: 1;
+        max-width: 32%;
     }
 
     .service-item h3 {
@@ -784,7 +761,13 @@ footer p {
     .service-item p {
         font-size: 0.9rem;
     }
+    .testimonial-item p {
+        font-size: 0.9rem; /* Further reduce text size for very small screens */
+    }
 
+    .testimonial-item .before-after img {
+        width: 48%; /* Maintain side by side alignment even on very small screens */
+    }
     .faq-item h3 {
         font-size: 1.2rem;
     }
@@ -792,4 +775,5 @@ footer p {
     .faq-item p {
         font-size: 0.9rem;
     }
+   
 }
