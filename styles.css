@@ -328,39 +328,96 @@ section h2::after {
     align-items: center;
     text-align: center;
     padding: 2rem 1rem;
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
-}
-
-.about-text {
-    max-width: 800px;
-    text-align: center;
-    margin-bottom: 1rem;
+    background: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: var(--dark-gray);
 }
 
 .about-text h2 {
+    font-size: 2.5rem;
+    color: var(--bay-of-many);
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.about-text h2::after {
+    content: '';
+    width: 60px;
+    height: 4px;
+    background-color: var(--jaffa);
+    display: block;
+    margin: 0.5rem auto 1rem;
+    border-radius: 2px;
+}
+
+.about-section {
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+.about-section h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--bay-of-many);
+    position: relative;
+}
+
+.about-section h3::after {
+    content: '';
+    width: 40px;
+    height: 3px;
+    background-color: var(--yellow-orange);
+    display: block;
+    margin: 0.5rem 0;
+    border-radius: 2px;
+}
+
+.about-section p {
+    font-size: 1.1rem;
+    line-height: 1.8;
     margin-bottom: 1rem;
 }
 
-.about-text p {
+ul {
+    list-style: none;
+    padding-left: 0;
     margin-bottom: 1rem;
+}
+
+ul li {
+    background: var(--light-gray);
+    padding: 0.5rem 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 4px;
+    font-size: 1.1rem;
+}
+
+ul li strong {
+    color: var(--bay-of-many);
 }
 
 .inline-cta {
-    background: var(--denim);
+    background: var(--bay-of-many);
     color: var(--white);
     border: none;
     border-radius: 4px;
     padding: 0.8rem 1.5rem;
-    font-size: 1rem;
+    font-size: 1.1rem;
     cursor: pointer;
     transition: background 0.3s, transform 0.3s;
-    margin-top: 0.5rem;
 }
 
 .inline-cta:hover {
     background: var(--yellow-orange);
     transform: scale(1.05);
+}
+
+.inline-cta:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(21, 119, 193, 0.5);
 }
 
 
