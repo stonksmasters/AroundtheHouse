@@ -643,7 +643,7 @@ ul li strong {
 }
 
 .form-group input:valid, .form-group textarea:valid {
-    border-color: var(--denim);
+    border-color: var(--bay-of-many);
     box-shadow: 0 0 5px rgba(0, 119, 193, 0.5);
 }
 
@@ -653,7 +653,7 @@ ul li strong {
 }
 
 .contact button {
-    background: var(--denim);
+    background: var(--bay-of-many);
     border: none;
     padding: 1rem 2rem;
     cursor: pointer;
@@ -665,13 +665,13 @@ ul li strong {
 }
 
 .contact button:hover {
-    background: var(--bay-of-many);
+    background: var(--denim);
     transform: translateY(-2px);
 }
 
 /* Enhanced Footer with Social Media Icons */
 footer {
-    background: var(--denim);
+    background: var(--bay-of-many);
     color: var(--white);
     text-align: center;
     padding: 2rem 1rem;
@@ -901,7 +901,7 @@ footer p {
     }
 
     .contact button {
-        background: var(--denim);
+        background: var(--bay-of-many);
     }
 
     footer {
