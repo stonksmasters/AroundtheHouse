@@ -80,6 +80,7 @@ document.querySelectorAll('.faq-item h3').forEach(item => {
         parent.classList.toggle('active');
     });
 });
+
 document.addEventListener("DOMContentLoaded", function () {
     const testimonialItems = document.querySelectorAll(".testimonial-item");
     let currentTestimonialItem = 0;
