@@ -109,6 +109,71 @@ footer p {
     line-height: 1.5;
     color: var(--white);
 }
+/* Terms of Service Section */
+.terms-of-service {
+    padding: 4rem 1rem;
+    background-color: var(--offwhite);
+    color: var(--dark-gray);
+}
+
+.terms-of-service h1 {
+    font-size: 2.5rem;
+    color: var(--bay-of-many);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.terms-of-service h2 {
+    font-size: 2rem;
+    color: var(--jaffa);
+    margin-bottom: 1.5rem;
+}
+
+.terms-of-service p, .terms-of-service ul {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    color: var(--dark-gray);
+}
+
+.terms-of-service ul {
+    padding-left: 1.5rem;
+    list-style-type: disc;
+}
+
+.terms-of-service a {
+    color: var(--denim);
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.terms-of-service a:hover {
+    color: var(--jaffa);
+}
+
+address {
+    font-style: normal;
+    line-height: 1.8;
+    color: var(--dark-gray);
+}
+
+address a {
+    color: var(--denim);
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+address a:hover {
+    color: var(--jaffa);
+}
+
+/* Footer Update */
+footer p {
+    margin-top: 2rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--white);
+}
 
 /* Header */
 header {
