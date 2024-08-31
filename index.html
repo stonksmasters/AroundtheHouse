@@ -13,6 +13,10 @@
     <!-- Stylesheet - Minified for faster loading -->
     <link rel="stylesheet" href="styles.min.css">
 
+
+        <script src="https://www.google.com/recaptcha/enterprise.js?render=6LeAiTEqAAAAANLE-JQ2NjzdUIzQBn95q_KU16J9"></script>
+
+     
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-1FJZ6M3L89"></script>
     <script>
@@ -336,5 +340,14 @@
         </div>
         <p>&copy; 2024 Around the House. All rights reserved.</p>
     </footer>
+  <script>
+  function onClick(e) {
+    e.preventDefault();
+    grecaptcha.enterprise.ready(async () => {
+      const token = await grecaptcha.enterprise.execute('6LeAiTEqAAAAANLE-JQ2NjzdUIzQBn95q_KU16J9', {action: 'LOGIN'});
+    });
+  }
+</script>
 </body>
+
 </html>
