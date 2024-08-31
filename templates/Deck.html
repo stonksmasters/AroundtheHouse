@@ -20,7 +20,7 @@
     <header>
         <div class="container">
             <div class="logo-container">
-                <img id="logo" src="Color logo - no background.png" alt="Around the House Logo">
+                <img id="logo" src="/static/ logo - no background.png" alt="Around the House Logo">
             </div>
             <nav>
                 <div class="menu-toggle" id="menu-toggle">
@@ -39,15 +39,14 @@
         </div>
     </header>
 
-    <!-- Service-Specific Form -->
-    <section id="driveway-cleaning" class="contact">
+    <section id="deck-patio-cleaning" class="contact">
         <div class="container">
-            <h2>Request a Quote for Driveway Cleaning</h2>
-            <form id="driveway-cleaning-form" name="driveway-cleaning" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+            <h2>Request a Quote for Deck and Patio Cleaning</h2>
+            <form id="deck-patio-cleaning-form" name="deck-patio-cleaning" method="POST" data-netlify="true" netlify-honeypot="bot-field">
                 <!-- Hidden input for spam protection -->
                 <input type="hidden" name="bot-field" />
                 <!-- Hidden input to specify the form name -->
-                <input type="hidden" name="form-name" value="driveway-cleaning" />
+                <input type="hidden" name="form-name" value="deck-patio-cleaning" />
                 <!-- Hidden input for redirecting to thank you page -->
                 <input type="hidden" name="redirect" value="/thank-you.html" />
     
@@ -72,23 +71,25 @@
                 </div>
     
                 <div class="form-group">
-                    <label for="driveway-size">Driveway Size (Square Feet):</label>
-                    <input type="number" id="driveway-size" name="driveway-size" required>
+                    <label for="deck-patio-size">Deck/Patio Size (Square Feet):</label>
+                    <input type="number" id="deck-patio-size" name="deck-patio-size" required>
                 </div>
     
                 <div class="form-group">
-                    <label for="driveway-material">Driveway Material:</label>
-                    <select id="driveway-material" name="driveway-material" required>
+                    <label for="deck-patio-material">Deck/Patio Material:</label>
+                    <select id="deck-patio-material" name="deck-patio-material" required>
+                        <option value="wood">Wood</option>
+                        <option value="composite">Composite</option>
                         <option value="concrete">Concrete</option>
-                        <option value="asphalt">Asphalt</option>
+                        <option value="stone">Stone</option>
+                        <option value="brick">Brick</option>
                         <option value="pavers">Pavers</option>
-                        <option value="gravel">Gravel</option>
                         <option value="other">Other</option>
                     </select>
                 </div>
     
                 <div class="form-group">
-                    <label for="condition">Condition of Driveway:</label>
+                    <label for="condition">Condition of Deck/Patio:</label>
                     <select id="condition" name="condition" required>
                         <option value="excellent">Excellent</option>
                         <option value="good">Good</option>
@@ -132,6 +133,6 @@
         </div>
     </footer>
 
-    <script src="/scripts/script.js"></script>
+    <script src="/static/script.min.js"></script>
 </body>
 </html>
