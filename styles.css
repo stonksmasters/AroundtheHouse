@@ -38,6 +38,77 @@ body {
     flex-direction: column;
     align-items: center;
 }
+/* Privacy Policy Section */
+.privacy-policy {
+    padding: 4rem 1rem;
+    background-color: var(--offwhite);
+    color: var(--dark-gray);
+}
+
+.privacy-policy h1 {
+    font-size: 2.5rem;
+    color: var(--bay-of-many);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.privacy-policy h2 {
+    font-size: 2rem;
+    color: var(--jaffa);
+    margin-bottom: 1.5rem;
+}
+
+.privacy-policy h3 {
+    font-size: 1.5rem;
+    color: var(--denim);
+    margin-bottom: 1rem;
+}
+
+.privacy-policy p, .privacy-policy ul {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    color: var(--dark-gray);
+}
+
+.privacy-policy ul {
+    padding-left: 1.5rem;
+    list-style-type: disc;
+}
+
+.privacy-policy a {
+    color: var(--denim);
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.privacy-policy a:hover {
+    color: var(--jaffa);
+}
+
+address {
+    font-style: normal;
+    line-height: 1.8;
+    color: var(--dark-gray);
+}
+
+address a {
+    color: var(--denim);
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+address a:hover {
+    color: var(--jaffa);
+}
+
+/* Footer Update */
+footer p {
+    margin-top: 2rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--white);
+}
 
 /* Header */
 header {
