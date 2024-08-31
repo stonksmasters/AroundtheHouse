@@ -21,8 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
     revealSection(); // Initial check to reveal sections already in view
 });
 
-// Existing code
-// Add smooth scroll for anchor links
+// Smooth Scroll for Anchor Links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
@@ -45,7 +44,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Toggle the navigation menu
+// Toggle Navigation Menu
 const menuToggle = document.getElementById('menu-toggle');
 const navMenu = document.getElementById('nav-menu');
 const closeMenu = document.getElementById('close-menu');
@@ -71,6 +70,7 @@ closeMenu.addEventListener('click', function() {
     navMenu.classList.add('hide');
 });
 
+// FAQ Toggle
 document.querySelectorAll('.faq-item h3').forEach(item => {
     item.addEventListener('click', () => {
         const parent = item.parentElement;
@@ -81,6 +81,7 @@ document.querySelectorAll('.faq-item h3').forEach(item => {
     });
 });
 
+// Testimonial & Gallery Carousel
 document.addEventListener("DOMContentLoaded", function () {
     const testimonialItems = document.querySelectorAll(".testimonial-item");
     let currentTestimonialItem = 0;
@@ -95,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
         testimonialItems[currentTestimonialItem].classList.remove("previous");
     }
 
-    setInterval(showNextTestimonialItem, 5000); // Adjust the timing as needed
+    setInterval(showNextTestimonialItem, 5000);
 
     const galleryItems = document.querySelectorAll(".gallery-item");
     let currentGalleryItem = 0;
@@ -110,7 +111,7 @@ document.addEventListener("DOMContentLoaded", function () {
         galleryItems[currentGalleryItem].classList.remove("previous");
     }
 
-    setInterval(showNextGalleryItem, 5000); // Adjust the timing as needed
+    setInterval(showNextGalleryItem, 5000);
 
     // Section animation
     const sections = document.querySelectorAll('section');
@@ -121,16 +122,14 @@ document.addEventListener("DOMContentLoaded", function () {
             const sectionBottom = section.getBoundingClientRect().bottom;
             const triggerPoint = window.innerHeight * 0.85;
 
-            // Add 'visible' class when section is in view
             if (sectionTop < triggerPoint && sectionBottom > 0) {
                 section.classList.add('visible');
             } else {
-                // Remove 'visible' class when section is out of view
                 section.classList.remove('visible');
             }
         });
     };
 
     window.addEventListener('scroll', revealSection);
-    revealSection(); // Initial check to reveal sections already in view
+    revealSection();
 });

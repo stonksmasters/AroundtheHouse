@@ -2,25 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Around the House offers professional pressure washing services to transform your home. Get a quote today!">
+    <meta name="description" content="Around the House offers expert pressure washing services in Baton Rouge. Transform your home with a free quote today!">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Around the House - Pressure Washing</title>
-    <link rel="stylesheet" href="styles.css">
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1FJZ6M3L89"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <meta name="author" content="John Borg and Damien Granger">
+    <meta name="keywords" content="Pressure washing, Baton Rouge, driveway cleaning, house washing, deck cleaning">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>Around the House - Pressure Washing in Baton Rouge</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-  gtag('config', 'G-1FJZ6M3L89');
-</script>
+    <!-- Stylesheet - Minified for faster loading -->
+    <link rel="stylesheet" href="styles.min.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1FJZ6M3L89"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-1FJZ6M3L89');
+    </script>
+
+    <!-- JavaScript - Deferred to prevent blocking rendering -->
+    <script defer src="/scripts/script.min.jsS"></script>
 </head>
 <body>
     <header>
         <div class="container">
             <div class="logo-container">
-                <img id="logo" src="Color logo - no background.png" alt="Around the House Logo">
+                <img id="logo" src="Color logo - no background.png" alt="Around the House Pressure Washing Logo">
             </div>
             <nav>
                 <div class="menu-toggle" id="menu-toggle" aria-label="Open Menu" role="button" tabindex="0" aria-expanded="false">
@@ -33,7 +42,9 @@
                     <li><a href="#gallery" class="focusable">Gallery</a></li>
                     <li><a href="#faq" class="focusable">FAQ</a></li>
                     <li><a href="#contact" class="focusable">Contact</a></li>
-                    <li class="close-btn"><a href="javascript:void(0);" id="close-menu">Close</a></li>
+                    <li class="close-btn">
+                        <button id="close-menu" aria-label="Close Menu">Close</button>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -42,34 +53,36 @@
     <section class="hero">
         <div class="hero-overlay"></div>
         <div class="hero-content container">
-            <h1>Professional Pressure Washing Services</h1>
-            <p>Transforming your home with top-notch cleaning.</p>
+            <h1>Expert Pressure Washing Services in Baton Rouge</h1>
+            <p>Transform your home with our professional cleaning services. Get a free quote today!</p>
             <div class="cta-buttons">
-                <button class="secondary" onclick="window.location.href='#services'">Get a Quote</button>
+                <button class="primary" onclick="window.location.href='#services'">Get a Free Quote</button>
                 <button class="secondary" onclick="window.location.href='#services'">Our Services</button>
                 <button class="secondary" onclick="window.location.href='#contact'">Contact Us</button>
             </div>
         </div>
     </section>
 
-
     <section id="services" class="services">
         <div class="container">
             <h2>Our Services</h2>
             <div class="service-list">
                 <div class="service-item">
+                    <img src="pictures/melissa1.png" alt="Driveway Cleaning Service" class="service-image">
                     <h3>Driveway Cleaning</h3>
-                    <p>Restore the appearance of your driveway with our expert cleaning services.</p>
+                    <p>Make your driveway look brand new with our powerful, safe, and eco-friendly pressure washing services.</p>
                     <button onclick="window.location.href='driveway.html'">Get an Estimate</button>
                 </div>
                 <div class="service-item">
+                    <img src="pictures/ath8.png" alt="House Washing Service" class="service-image">
                     <h3>House Washing</h3>
-                    <p>Make your home look new again with our comprehensive house washing.</p>
+                    <p>Refresh your home's exterior with our comprehensive house washing service, designed to remove dirt and grime effectively.</p>
                     <button onclick="window.location.href='EstimateHouse.html'">Get an Estimate</button>
                 </div>
                 <div class="service-item">
+                    <img src="pictures/noclean5.png" alt="Deck and Patio Cleaning Service" class="service-image">
                     <h3>Deck and Patio Cleaning</h3>
-                    <p>Bring back the beauty of your outdoor spaces with our specialized cleaning.</p>
+                    <p>Restore the beauty of your outdoor spaces with our specialized deck and patio cleaning services.</p>
                     <button onclick="window.location.href='Deck.html'">Get an Estimate</button>
                 </div>
             </div>
@@ -78,156 +91,191 @@
 
     <section id="about" class="about">
         <div class="container about-container">
-            <div class="about-text">
-                <h2>About Us</h2>
-    
-                <div class="about-section">
+            <h2 class="section-header">About Us</h2>
+            <div class="about-grid">
+                <div class="about-text">
                     <h3>Our Story</h3>
                     <p>
-                        Around the House is more than just a business; it's a continuation of a family legacy and a dream shared by two cousins, John Borg and Damien Granger. What started as a remodeling company founded by John’s father has evolved into a versatile home maintenance service. After the passing of John’s father, we decided to honor his memory by transitioning the business from remodeling to pressure washing and home care services.
+                        <strong>Around the House</strong> is more than just a business; it's a continuation of a family legacy. Founded by cousins <strong>John Borg</strong> and <strong>Damien Granger</strong>, the company started as a remodeling business under John’s father. After his passing, we rebranded and expanded to offer comprehensive pressure washing and home care services, honoring his memory by transforming homes across Baton Rouge.
                     </p>
                     <p>
-                        Originally named "Pressure Bros," our business quickly grew, and after discovering an old flyer from the original company, we rebranded to "Around the House" to reflect the wide range of services we offer today.
+                        Originally known as <em>"Pressure Bros,"</em> we discovered an old flyer from the original company and rebranded to <strong>"Around the House"</strong> to reflect our broader range of services. We’re proud to serve our local community with dedication, care, and a commitment to excellence.
                     </p>
                 </div>
+                <div class="carousel-container">
+                    <div class="carousel">
+                        <img src="pictures/story1.jpg" alt="Our Work Image 1">
+                        <img src="pictures/story2.jpg" alt="Our Work Image 2">
+                        <img src="pictures/story3.jpg" alt="Our Work Image 3">
+                        <img src="pictures/story4.jpg" alt="Our Work Image 4">
+                    </div>
+                </div>
+            </div>
     
-                <div class="about-section">
-                    <h3>Our Team</h3>
-                    <p>
-                        As a small, family-operated business, John and Damien handle every aspect of the company themselves:
-                    </p>
-                    <ul>
-                        <li><strong>John Borg:</strong> Website development, branding, and customer relations.</li>
-                        <li><strong>Damien Granger:</strong> Social media management and marketing.</li>
-                    </ul>
-                    <p>
-                        We share the physical labor equally, ensuring that every job is completed with the highest standards of quality and care.
-                    </p>
+            <div class="about-values">
+                <h3>Our Mission & Values</h3>
+                <p>
+                    Our mission is simple: to provide top-quality home care services to the Baton Rouge community with <strong>integrity</strong>, <strong>transparency</strong>, and a personal touch. We believe in building lasting relationships with our clients, many of whom have become like family. We take pride in offering transparent, no-surprise quotes, and we strive to exceed expectations on every job, whether it’s pressure washing, junk removal, or lawn care.
+                </p>
+                <div class="values-list">
+                    <div class="value-item">
+                        <i class="fas fa-handshake" style="color: var(--denim); font-size: 48px;"></i>
+                        <h4>Integrity</h4>
+                        <p>We do what’s right, even when no one is watching. Our clients trust us to deliver honest, reliable services every time.</p>
+                    </div>
+                    <div class="value-item">
+                        <i class="fas fa-award" style="color: var(--jaffa); font-size: 48px;"></i>
+                        <h4>Excellence</h4>
+                        <p>We are committed to delivering the highest quality of work, ensuring that every job is completed to perfection.</p>
+                    </div>
+                    <div class="value-item">
+                        <i class="fas fa-users" style="color: var(--yellow-orange); font-size: 48px;"></i>
+                        <h4>Community</h4>
+                        <p>We are proud members of the Baton Rouge community and believe in giving back through exceptional service and local involvement.</p>
+                    </div>
                 </div>
+            </div>
     
-                <div class="about-section">
-                    <h3>Our Mission</h3>
-                    <p>
-                        We understand how overwhelming home maintenance can be. Our mission is to help those who are unable to keep up with tasks around the house, whether due to time constraints, physical limitations, or simply not knowing where to start. We provide transparent, no-surprise quotes, utilizing tools like Google Earth to measure properties and offer accurate estimates over the phone or via email.
-                    </p>
-                    <p>
-                        Our services range from pressure washing and house cleaning to junk removal, lawn care, and more. If it’s a job around the house, we’re here to help.
-                    </p>
+            <div class="about-team">
+                <h3>Meet the Team</h3>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <img src="pictures/story2.jpg" alt="John Borg, Founder">
+                        <h4>John Borg</h4>
+                        <p>John handles website development, branding, and customer relations. His dedication to detail ensures every project reflects the Around the House standard of quality.</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="pictures/story3.jpg" alt="Damien Granger, Founder">
+                        <h4>Damien Granger</h4>
+                        <p>Damien manages social media and marketing, bringing our message to the Baton Rouge community with creativity and passion.</p>
+                    </div>
                 </div>
+            </div>
     
-                <div class="about-section">
-                    <h3>Client Relationships</h3>
-                    <p>
-                        Building lasting relationships with our clients is at the heart of what we do. Many of our clients have become like family to us, often inviting us over for dinner after a job well done. We believe in rewarding loyalty, which is why we offer discounts and even free services to our most dedicated customers.
-                    </p>
-                </div>
-    
-                <div class="about-section">
-                    <h3>Looking Ahead</h3>
-                    <p>
-                        As we look to the future, our goal is to expand our reach and become a trusted outlet for others who share our passion for honest, fulfilling work. We aim to make a positive impact in every community we serve, connecting with people and building lasting relationships through the services we provide.
-                    </p>
-                    <button class="primary inline-cta" onclick="window.location.href='#services'">Get a Quote</button>
-                </div>
+            <div class="about-future">
+                <h3>Looking Ahead</h3>
+                <p>
+                    As we look to the future, we aim to expand our reach and continue to make a positive impact in every community we serve. We’re excited about the opportunity to connect with more people and bring our high standards of service to homes across the region. Whether it’s your first time working with us or you’ve been a client for years, we’re here to help with all your home care needs.
+                </p>
+                <button class="primary inline-cta" onclick="window.location.href='#services'">Get a Quote</button>
             </div>
         </div>
     </section>
     
     
-    <section id="testimonials" class="testimonial-carousel">
+
+    <section id="testimonials" class="testimonials">
         <div class="container">
-            <h2>Testimonials</h2>
-            <div class="testimonial-item active">
-                <div class="before-after">
-                    <img src="pictures/melissa1.png" alt="Before Image">
-                    <img src="pictures/melissa2.png" alt="After Image">
+            <h2>What Our Clients Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-item">
+                    <div class="before-after">
+                        <img src="pictures/melissa1.png" alt="Before - Melissa's House">
+                        <img src="pictures/melissa2.png" alt="After - Melissa's House">
+                    </div>
+                    <div class="testimonial-content">
+                        <p>"John & Damien did an excellent job on my house, walkways & driveway. All the concrete looks brand new. Highly recommend!"</p>
+                        <span>- Melissa, Baton Rouge</span>
+                    </div>
                 </div>
-                <p>"John & Damien did an excellent job on my house, walkways & driveway. I have an older home & they did a great job getting my house clean & protecting my older wood & paint. All the concrete looks brand new. Wish I had before pictures (only after). I plan to have them come every 6 months for a clean. Great job! Highly recommend!"</p>
-            </div>
-            <div class="testimonial-item">
-                <div class="before-after">
-                    <img src="pictures/nodirty4.png" alt="Before Image">
-                    <img src="pictures/noclean.png" alt="After Image">
+                <div class="testimonial-item">
+                    <div class="before-after">
+                        <img src="pictures/nodirty4.png" alt="Before - Client's Walkway">
+                        <img src="pictures/noclean.png" alt="After - Client's Walkway">
+                    </div>
+                    <div class="testimonial-content">
+                        <p>"Around the House cleaners were quick, communicative, and thorough. We plan to hire them on an ongoing basis."</p>
+                        <span>- Jessica, Baton Rouge</span>
+                    </div>
                 </div>
-                <p>"Around the House cleaners were quick to respond, communicative, dependable and punctual. The two cleaners tackled a difficult job and did excellent work and they were a joy to work with. They were efficient and thorough, and went above and beyond expectations. We definitely plan to hire them on an ongoing basis."</p>
-            </div>
-            <div class="testimonial-item">
-                <div class="before-after">
-                    <img src="pictures/carportdirty.png" alt="Before Image">
-                    <img src="pictures/Carportclean (1).png" alt="After Image">
+                <div class="testimonial-item">
+                    <div class="before-after">
+                        <img src="pictures/carportdirty.png" alt="Before - Client's Carport">
+                        <img src="pictures/Carportclean (1).png" alt="After - Client's Carport">
+                    </div>
+                    <div class="testimonial-content">
+                        <p>"Rapid response time and dependable. My carport looks fantastic!"</p>
+                        <span>- Mike, Baton Rouge</span>
+                    </div>
                 </div>
-                <p>"Rapid response time and dependable."</p>
             </div>
         </div>
     </section>
     
     
-    <section id="gallery" class="gallery-carousel">
+    <section id="gallery" class="gallery">
         <div class="container">
-            <h2>Gallery</h2>
-            <div class="gallery-item active">
-                <div class="before-after">
-                    <div class="image-container">
-                        <img src="pictures/nodirty.png" alt="Before Image">
-                        <div class="label">Before</div>
+            <h2>Our Work</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <div class="before-after">
+                        <img src="pictures/nodirty.png" alt="Before Cleaning Driveway">
+                        <img src="pictures/noclean.png" alt="After Cleaning Driveway">
                     </div>
-                    <div class="image-container">
-                        <img src="pictures/noclean.png" alt="After Image">
-                        <div class="label">After</div>
-                    </div>
+                    <div class="label">Driveway Cleaning</div>
                 </div>
-            </div>
-            <div class="gallery-item">
-                <div class="before-after">
-                    <div class="image-container">
-                        <img src="pictures/nodirty2.png" alt="Before Image">
-                        <div class="label">Before</div>
+                <div class="gallery-item">
+                    <div class="before-after">
+                        <img src="pictures/nodirty2.png" alt="Before Cleaning Patio">
+                        <img src="pictures/noclean5.png" alt="After Cleaning Patio">
                     </div>
-                    <div class="image-container">
-                        <img src="pictures/noclean5.png" alt="After Image">
-                        <div class="label">After</div>
-                    </div>
+                    <div class="label">Patio Cleaning</div>
                 </div>
             </div>
         </div>
     </section>
+    
+    
 
     <section id="faq" class="faq">
         <div class="container">
             <h2>Frequently Asked Questions</h2>
             <div class="faq-list">
                 <div class="faq-item">
-                    <h3>What areas do you serve in Baton Rouge?</h3>
-                    <p>We proudly serve Baton Rouge and the surrounding areas, including Denham Springs, Prairieville, Central, and Gonzales. If you’re unsure whether we serve your area, feel free to contact us!</p>
+                    <h3 id="faq1" class="faq-question">What areas do you serve in Baton Rouge?</h3>
+                    <div class="faq-answer" aria-labelledby="faq1">
+                        <p>We proudly serve Baton Rouge and the surrounding areas, including Denham Springs, Prairieville, Central, and Gonzales. If you’re unsure whether we serve your area, feel free to <a href="#contact">contact us</a> for more details.</p>
+                    </div>
                 </div>
                 <div class="faq-item">
-                    <h3>How much does pressure washing cost?</h3>
-                    <p>Pricing depends on the size of the area that needs to be cleaned and the type of service. We provide free, no-obligation quotes based on your specific needs. Contact us with your address, and we'll measure the area using Google Earth to give you an accurate estimate.</p>
+                    <h3 id="faq2" class="faq-question">How much does pressure washing cost?</h3>
+                    <div class="faq-answer" aria-labelledby="faq2">
+                        <p>Pricing depends on the size of the area that needs to be cleaned and the type of service. We provide free, no-obligation quotes based on your specific needs. Contact us with your address, and we'll measure the area using Google Earth to give you an accurate estimate.</p>
+                    </div>
                 </div>
                 <div class="faq-item">
-                    <h3>What kind of equipment do you use?</h3>
-                    <p>We use professional-grade John-Deer 4000 psi and 4GPM pressure washers and environmentally safe cleaning solutions. Our equipment is powerful enough to handle tough grime, but we also take care to protect surfaces, especially older homes and delicate materials.</p>
+                    <h3 id="faq3" class="faq-question">What kind of equipment do you use?</h3>
+                    <div class="faq-answer" aria-labelledby="faq3">
+                        <p>We use professional-grade John Deere 4000 psi and 4GPM pressure washers, along with environmentally safe cleaning solutions. Our equipment is powerful enough to handle tough grime but gentle enough to protect surfaces, especially older homes and delicate materials.</p>
+                    </div>
                 </div>
                 <div class="faq-item">
-                    <h3>Do you offer services beyond pressure washing?</h3>
-                    <p>Absolutely! In addition to pressure washing, we offer a variety of services including house cleaning, junk removal, lawn care, and general labor around the house. Whether you need your yard cleaned up or help with home organization, we’re here to help.</p>
+                    <h3 id="faq4" class="faq-question">Do you offer services beyond pressure washing?</h3>
+                    <div class="faq-answer" aria-labelledby="faq4">
+                        <p>Absolutely! In addition to pressure washing, we offer a variety of services including house cleaning, junk removal, lawn care, and general labor around the house. Whether you need your yard cleaned up or help with home organization, we’re here to help.</p>
+                    </div>
                 </div>
                 <div class="faq-item">
-                    <h3>How often should I have my home pressure washed?</h3>
-                    <p>For homes in Baton Rouge, we recommend pressure washing at least once a year due to the region’s humidity, which can lead to mold and mildew buildup. If you have lots of trees or live near water, you might consider more frequent cleanings.</p>
+                    <h3 id="faq5" class="faq-question">How often should I have my home pressure washed?</h3>
+                    <div class="faq-answer" aria-labelledby="faq5">
+                        <p>For homes in Baton Rouge, we recommend pressure washing at least once a year due to the region’s humidity, which can lead to mold and mildew buildup. If you have lots of trees or live near water, you might consider more frequent cleanings.</p>
+                    </div>
                 </div>
                 <div class="faq-item">
-                    <h3>Do you offer any discounts?</h3>
-                    <p>Yes, we offer discounts for repeat customers, senior citizens, and military personnel. We also have seasonal promotions, so be sure to ask about any current offers when you contact us.</p>
+                    <h3 id="faq6" class="faq-question">Do you offer any discounts?</h3>
+                    <div class="faq-answer" aria-labelledby="faq6">
+                        <p>Yes, we offer discounts for repeat customers, senior citizens, and military personnel. We also have seasonal promotions, so be sure to ask about any current offers when you contact us.</p>
+                    </div>
                 </div>
                 <div class="faq-item">
-                    <h3>What is your service guarantee?</h3>
-                    <p>We stand behind our work 100%. If you’re not satisfied with the results, we’ll come back and make it right at no additional cost. Your satisfaction is our top priority.</p>
+                    <h3 id="faq7" class="faq-question">What is your service guarantee?</h3>
+                    <div class="faq-answer" aria-labelledby="faq7">
+                        <p>We stand behind our work 100%. If you’re not satisfied with the results, we’ll come back and make it right at no additional cost. Your satisfaction is our top priority.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    
 
     <section id="contact" class="contact">
         <div class="container">
@@ -242,29 +290,35 @@
     
                 <div class="form-group">
                     <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required>
+                    <input type="text" id="name" name="name" required aria-required="true">
                 </div>
                 <div class="form-group">
                     <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
+                    <input type="email" id="email" name="email" required aria-required="true">
                 </div>
                 <div class="form-group">
                     <label for="message">Message:</label>
-                    <textarea id="message" name="message" required></textarea>
+                    <textarea id="message" name="message" required aria-required="true"></textarea>
                 </div>
+                
+                <!-- reCAPTCHA for spam protection -->
+                <div class="g-recaptcha" data-sitekey="your-site-key"></div>
+    
                 <button type="submit">Send</button>
             </form>
         </div>
     </section>
     
     <footer>
-        <div class="container">
-            <p>&copy; 2024 Around the House. All rights reserved.</p>
+        <div class="container footer-container">
+            <div class="footer-logo">
+                <img src="Color logo - no background.png" alt="Around the House Logo">
+            </div>
             <div class="footer-links">
                 <a href="#">Privacy Policy</a>
                 <a href="#">Terms of Service</a>
-                <a href="#">About Us</a>
-                <a href="#">Contact</a>
+                <a href="#about">About Us</a>
+                <a href="#contact">Contact</a>
             </div>
             <div class="footer-social">
                 <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
@@ -280,8 +334,7 @@
                 </a>
             </div>
         </div>
+        <p>&copy; 2024 Around the House. All rights reserved.</p>
     </footer>
-
-    <script src="/scripts/script.js"></script>
 </body>
 </html>
