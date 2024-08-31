@@ -291,7 +291,7 @@
                 <input type="hidden" name="form-name" value="contact" />
                 
                 <input type="hidden" name="redirect" value="/thank-you.html" />
-    
+
                 <div class="form-group">
                     <label for="name">Name:</label>
                     <input type="text" id="name" name="name" required aria-required="true">
@@ -306,8 +306,8 @@
                 </div>
                 
                 <!-- reCAPTCHA for spam protection -->
-                <div class="g-recaptcha" data-sitekey="6LecKTIqAAAAAMNlAYZr6AGxeoYSYOw2sZfnpdWg"></div>
-    
+                <div class="g-recaptcha" data-sitekey="6LeAiTEqAAAAANLE-JQ2NjzdUIzQBn95q_KU16J9"></div>
+
                 <button type="submit">Send</button>
             </form>
         </div>
@@ -340,14 +340,18 @@
         </div>
         <p>&copy; 2024 Around the House. All rights reserved.</p>
     </footer>
-  <script>
-  function onClick(e) {
-    e.preventDefault();
-    grecaptcha.enterprise.ready(async () => {
-      const token = await grecaptcha.enterprise.execute('6LeAiTEqAAAAANLE-JQ2NjzdUIzQBn95q_KU16J9', {action: 'LOGIN'});
-    });
-  }
-</script>
+    <script>
+        // reCAPTCHA Enterprise Integration
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent the form from submitting immediately
+            
+            grecaptcha.enterprise.ready(async function() {
+                const token = await grecaptcha.enterprise.execute('6LeAiTEqAAAAANLE-JQ2NjzdUIzQBn95q_KU16J9', {action: 'submit'});
+                document.getElementById('g-recaptcha-response').value = token; // Add token to a hidden input
+                e.target.submit(); // Submit the form now that the token is set
+            });
+        });
+        </script>
 </body>
 
 </html>
