@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         grecaptcha.enterprise.ready(async function () {
             const token = await grecaptcha.enterprise.execute('6LeAiTEqAAAAANLE-JQ2NjzdUIzQBn95q_KU16J9', { action: 'submit' });
-            const response = await fetch("/verify-recaptcha", {
+            const response = await fetch("/api/recaptcha/verify", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ token: token, action: 'submit' })
