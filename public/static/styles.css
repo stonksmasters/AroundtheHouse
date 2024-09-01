@@ -38,6 +38,63 @@ body {
     flex-direction: column;
     align-items: center;
 }
+
+.thank-you-container {
+    background-color: var(--white);
+    padding: 2rem;
+    max-width: 600px;
+    margin: 10vh auto; /* Center vertically with some space at the top */
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.thank-you-logo {
+    max-width: 150px;
+    margin-bottom: 1.5rem;
+}
+
+.thank-you-container h1 {
+    font-size: 2.5rem;
+    color: var(--bay-of-many);
+    margin-bottom: 1rem;
+}
+
+.thank-you-container p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--dark-gray);
+    margin-bottom: 2rem;
+}
+
+.home-button {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    color: var(--white);
+    background-color: var(--denim);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.home-button:hover {
+    background-color: var(--yellow-orange);
+    transform: translateY(-3px);
+}
+
+/* Animation for a smooth fade-in effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 /* Privacy Policy Section */
 .privacy-policy {
     padding: 4rem 1rem;
@@ -946,6 +1003,31 @@ footer p {
 
 /* Mobile Styles for Responsiveness */
 @media (max-width: 768px) {
+
+    .thank-you-container {
+        padding: 1.5rem;
+        margin: 15vh auto; /* More top margin to adjust for smaller screens */
+    }
+
+    .thank-you-logo {
+        max-width: 120px;
+        margin-bottom: 1rem;
+    }
+
+    .thank-you-container h1 {
+        font-size: 2rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .thank-you-container p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .home-button {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+    }
     .menu-toggle {
         display: flex;
     }
@@ -1088,6 +1170,31 @@ footer p {
 
 /* Very Small Screens */
 @media (max-width: 480px) {
+
+    .thank-you-container {
+        padding: 1rem;
+        margin: 20vh auto; /* Even more top margin for very small screens */
+    }
+
+    .thank-you-logo {
+        max-width: 100px;
+        margin-bottom: 0.75rem;
+    }
+
+    .thank-you-container h1 {
+        font-size: 1.75rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .thank-you-container p {
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+    }
+
+    .home-button {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
     .cta-buttons button {
         padding: 0.5rem 0.7rem;
         font-size: 0.95rem;
