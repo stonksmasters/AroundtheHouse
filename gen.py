@@ -18,9 +18,9 @@ for location_key, location_data in locations.items():
     os.makedirs(output_dir, exist_ok=True)
     
     # Replace the placeholders with actual data
-    filled_template = template.replace('[[location]]', location_data['location'])
-    filled_template = filled_template.replace('[[latitude]]', location_data['latitude'])
-    filled_template = filled_template.replace('[[longitude]]', location_data['longitude'])
+    filled_template = template.replace('[[ location ]]', location_data['location'])
+    filled_template = filled_template.replace('[[ latitude ]]', location_data['latitude'])
+    filled_template = filled_template.replace('[[ longitude ]]', location_data['longitude'])
     
     # Write the filled template to a new file
     with open(output_file, 'w') as file:

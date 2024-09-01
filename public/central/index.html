@@ -89,8 +89,8 @@
                     <li><a href="#services" class="focusable">Services</a></li>
                     <li><a href="#about" class="focusable">About Us</a></li>
                     <li><a href="#testimonials" class="focusable">Testimonials</a></li>
-                    <li><a href="#gallery" class="focusable">Gallery</a></li>
                     <li><a href="#faq" class="focusable">FAQ</a></li>
+                    <li><a href="#gallery" class="focusable">Gallery</a></li>
                     <li><a href="#contact" class="focusable">Contact</a></li>
                     <li class="close-btn">
                         <button id="close-menu" aria-label="Close Menu">Close</button>
@@ -121,23 +121,24 @@
                     <img src="/static/pictures/melissa1.png" alt="Driveway Cleaning Service in Central" class="service-image">
                     <h3>Central Driveway Cleaning</h3>
                     <p>Make your driveway look brand new with our powerful, safe, and eco-friendly pressure washing services in Central.</p>
-                    <button onclick="window.location.href='#contact'">Get an Estimate</button>
+                    <button onclick="window.location.href='/driveway.html'">Get an Estimate</button>
                 </div>
                 <div class="service-item">
                     <img src="/static/pictures/ath8.png" alt="House Washing Service in Central" class="service-image">
                     <h3>Central House Washing</h3>
                     <p>Refresh your home's exterior with our comprehensive house washing service, designed to remove dirt and grime effectively in Central.</p>
-                    <button onclick="window.location.href='#contact'">Get an Estimate</button>
+                    <button onclick="window.location.href='/EstimateHouse.html'">Get an Estimate</button>
                 </div>
                 <div class="service-item">
                     <img src="/static/pictures/noclean5.png" alt="Deck and Patio Cleaning Service in Central" class="service-image">
                     <h3>Central Deck and Patio Cleaning</h3>
                     <p>Restore the beauty of your outdoor spaces with our specialized deck and patio cleaning services in Central.</p>
-                    <button onclick="window.location.href='#contact'">Get an Estimate</button>
+                    <button onclick="window.location.href='/Deck.html'">Get an Estimate</button>
                 </div>
             </div>
         </div>
     </section>
+    
 
     <section id="about" class="about">
         <div class="container about-container">
@@ -210,6 +211,46 @@
                 <button class="primary inline-cta" onclick="window.location.href='#services'">Get a Quote</button>
             </div>
         </div>
+
+
+    </section>
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2>What Our Clients Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-item">
+                    <div class="before-after">
+                        <img src="/static/pictures/melissa1.png" alt="Before cleaning in Baton Rouge">
+                        <img src="/static/pictures/melissa2.png" alt="After cleaning in Baton Rouge">
+                    </div>
+                    <div class="testimonial-content">
+                        <p>"John & Damien did an excellent job on my house, walkways & driveway. I have an older home & they did a great job getting my house clean & protecting my older wood & paint. All the concrete looks brand new. Wish I had before pictures ( only after).
+                            I plan to have them come every 6 months for a clean. Great job! Highly recommend!"</p>
+                        <p>- Melissa C., Baton Rouge</p>
+                    </div>
+                </div>
+                <div class="testimonial-item">
+                    <div class="before-after">
+                        <img src="/static/pictures/carportdirty.png" alt="Before cleaning in Prairieville">
+                        <img src="/static/pictures/Carportclean (1).png" alt="After cleaning in Prairieville">
+                    </div>
+                    <div class="testimonial-content">
+                        <p>"Rapid response time and dependable."</p>
+                        <p>- Lonnie C., Prairieville</p>
+                    </div>
+                </div>
+                <div class="testimonial-item">
+                    <div class="before-after">
+                        <img src="/static/pictures/ath6.png" alt="Before cleaning in Hammond">
+                        <img src="/static/pictures/ath9.png" alt="After cleaning in Hammond">
+                    </div>
+                    <div class="testimonial-content">
+                        <p>"Around the House cleaners were quick to respond, communicative, dependable and punctual. The two cleaners tackled a difficult job and did excellent work and they were a joy to work with. They were efficient and thorough, and went above and beyond expectations. We definitely plan to hire them on an ongoing basis."</p>
+                        <p>- Susan L., Hammond</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
     
     <section id="faq" class="faq">
@@ -262,13 +303,43 @@
         </div>
     </section>
 
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2>Our Work</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <div class="before-after">
+                        <img src="/static/pictures/nodirty2.png" alt="Gallery before - Patio cleaning">
+                        <img src="/static/pictures/noclean5.png" alt="Gallery after - Patio cleaning">
+                    </div>
+                    <p class="label">Patio Cleaning</p>
+                </div>
+                <div class="gallery-item">
+                    <div class="before-after">
+                        <img src="/static/pictures/carportdirty.png" alt="Gallery before - Carport cleaning">
+                        <img src="/static/pictures/Carportclean (1).png" alt="Gallery after - Carport cleaning">
+                    </div>
+                    <p class="label">Carport Cleaning</p>
+                </div>
+                <div class="gallery-item">
+                    <div class="before-after">
+                        <img src="/static/pictures/melissa1.png" alt="Gallery before - Driveway cleaning">
+                        <img src="/static/pictures/melissa2.png" alt="Gallery after - Driveway cleaning">
+                    </div>
+                    <p class="label">Driveway Cleaning</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
     <section id="contact" class="contact">
         <div class="container">
             <h2>Contact Us</h2>
             <form id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html">
                 <input type="hidden" name="bot-field" />
                 <input type="hidden" name="form-name" value="contact" />
-                <input type="hidden" name="redirect" value="/static/thank-you.html" />
+                <input type="hidden" name="redirect" value="/thank-you.html" />
 
                 <div class="form-group">
                     <label for="name">Name:</label>
@@ -294,8 +365,8 @@
                 <img src="/static/Color logo - no background.png" alt="Around the House Logo">
             </div>
             <div class="footer-links">
-                <a href="/public/privacy.html">Privacy Policy</a>
-                <a href="/public/termsofservice.html">Terms of Service</a>
+                <a href="/privacy.html">Privacy Policy</a>
+                <a href="/termsofservice.html">Terms of Service</a>
                 <a href="#about">About Us</a>
                 <a href="#contact">Contact</a>
             </div>

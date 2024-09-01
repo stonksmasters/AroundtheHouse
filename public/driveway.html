@@ -20,20 +20,22 @@
     <header>
         <div class="container">
             <div class="logo-container">
-                <img id="logo" src="/static/Color logo - no background.png logo - no background.png" alt="Around the House Logo">
+                <img id="logo" src="/static/Color logo - no background.png" alt="Around the House Pressure Washing Logo">
             </div>
             <nav>
-                <div class="menu-toggle" id="menu-toggle">
+                <div class="menu-toggle" id="menu-toggle" aria-label="Open Menu" role="button" tabindex="0" aria-expanded="false">
                     <div class="hamburger"></div>
                 </div>
-                <ul id="nav-menu" class="nav-menu">
-                    <li><a href="/index.html">Home</a></li>
-                    <li><a href="/#services">Services</a></li>
-                    <li><a href="/#about">About Us</a></li>
-                    <li><a href="/#testimonials">Testimonials</a></li>
-                    <li><a href="/#gallery">Gallery</a></li>
-                    <li><a href="/#faq">FAQ</a></li>
-                    <li><a href="/#contact">Contact</a></li>
+                <ul id="nav-menu" class="nav-menu" role="navigation" aria-hidden="true">
+                    <li><a href="#services" class="focusable">Services</a></li>
+                    <li><a href="#about" class="focusable">About Us</a></li>
+                    <li><a href="#testimonials" class="focusable">Testimonials</a></li>
+                    <li><a href="#faq" class="focusable">FAQ</a></li>
+                    <li><a href="#gallery" class="focusable">Gallery</a></li>
+                    <li><a href="#contact" class="focusable">Contact</a></li>
+                    <li class="close-btn">
+                        <button id="close-menu" aria-label="Close Menu">Close</button>
+                    </li>
                 </ul>
             </nav>
         </div>
