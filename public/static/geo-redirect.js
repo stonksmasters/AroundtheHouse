@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     const hostname = window.location.hostname;
     const isLocal = hostname === "localhost" || hostname === "127.0.0.1";
-    const currentPath = window.location.pathname;
+    const currentPath = window.location.pathname.replace(/\/$/, ""); // Remove trailing slash if any
     const storageKey = "locationRedirected"; // Key for sessionStorage to store the redirect state
 
     console.log("Hostname:", hostname);
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const locations = {
                 "baton-rouge": "Baton Rouge",
                 "zachary": "Zachary",
-                "prarieville": "Prarieville",
+                "prairieville": "Prairieville",
                 "denham-springs": "Denham Springs",
                 "gonzales": "Gonzales",
                 "central": "Central",
@@ -40,9 +40,13 @@ document.addEventListener("DOMContentLoaded", function () {
             };
 
             const expectedPath = isLocal ? `/public/${userLocation}` : `/${userLocation}`;
-            console.log("Expected path based on location:", expectedPath);
+            const normalizedExpectedPath = expectedPath.replace(/\/$/, ""); // Remove trailing slash if any
 
-            const isOnCorrectPage = currentPath === expectedPath;
+            console.log("Expected path based on location:", normalizedExpectedPath);
+
+            const isHomePage = currentPath === "" || currentPath === "/" || currentPath === "/index.html";
+            const isOnCorrectPage = currentPath === normalizedExpectedPath || (isHomePage && userLocation === "baton-rouge");
+
             console.log("Is on correct page:", isOnCorrectPage);
 
             // Check if the user has already been redirected or declined
@@ -59,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     if (confirmation) {
                         console.log("User accepted redirection.");
                         sessionStorage.setItem(storageKey, "true");
-                        window.location.href = expectedPath;
+                        window.location.href = normalizedExpectedPath;
                     } else {
                         console.log("User declined redirection.");
                         sessionStorage.setItem(storageKey, "true");
