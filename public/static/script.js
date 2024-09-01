@@ -77,26 +77,4 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // reCAPTCHA Enterprise Integration
-    document.querySelector("#contact-form").addEventListener("submit", async function (e) {
-        e.preventDefault(); // Prevent the form from submitting immediately
-
-        grecaptcha.enterprise.ready(async function () {
-            const token = await grecaptcha.enterprise.execute('6LeAiTEqAAAAANLE-JQ2NjzdUIzQBn95q_KU16J9', { action: 'submit' });
-            const response = await fetch("/api/recaptcha/verify", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ token: token, action: 'submit' })
-            });
-            const result = await response.json();
-
-            if (result.success) {
-                console.log("reCAPTCHA verified successfully.");
-                e.target.submit();
-            } else {
-                console.error("reCAPTCHA verification failed.");
-                alert("reCAPTCHA verification failed. Please try again.");
-            }
-        });
-    });
 });
