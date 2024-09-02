@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Transform your home with expert pressure washing services. Specializing in driveway, house, and deck cleaning. Get a free quote today!">
+    <title>Pressure Washing Services | Around the House</title>
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Pressure Washing Services | Around the House">
+    <meta property="og:description" content="Expert pressure washing services. Driveway, house, and deck cleaning. Free quotes available.">
+    <meta property="og:image" content="https://aroundthehouse.services/static/Color%20logo%20-%20no%20background.png">
+    <meta property="og:url" content="https://aroundthehouse.services/landingpage.html">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Pressure Washing Services | Around the House">
+    <meta name="twitter:description" content="Expert pressure washing services. Driveway, house, and deck cleaning. Free quotes available.">
+    <meta name="twitter:image" content="https://aroundthehouse.services/static/Color%20logo%20-%20no%20background.png">
+
+    <style>
+        :root {
+            --denim: #1A73E8;
+            --jaffa: #FF6F3F;
+            --yellow-orange: #FFB74D;
+            --bay-of-many: #2A3A8E;
+            --white: #FFFFFF;
+            --offwhite: #F8F9FA;
+            --light-gray: #E9ECEF;
+            --dark-gray: #222222;
+            --container-width: 800px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background-color: var(--light-gray);
+            color: var(--dark-gray);
+            line-height: 1.6;
+            font-size: 16px;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            background-color: var(--white);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        header img {
+            max-width: 150px;
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 20px;
+            background: var(--bay-of-many);
+            color: var(--white);
+            padding: 40px 20px;
+            border-radius: 8px;
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--jaffa);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 1.1rem;
+            transition: background 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: var(--yellow-orange);
+        }
+
+        .services {
+            margin-bottom: 20px;
+        }
+
+        .services h2 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--bay-of-many);
+            text-align: center;
+        }
+
+        .service-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: var(--offwhite);
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .service-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--bay-of-many);
+        }
+
+        .service-item p {
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+
+        .about {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--bay-of-many);
+        }
+
+        .about p {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        .about img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonials {
+            margin-bottom: 20px;
+        }
+
+        .testimonials h2 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--bay-of-many);
+            text-align: center;
+        }
+
+        .testimonial-item {
+            margin-bottom: 15px;
+            background-color: var(--offwhite);
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial-item p {
+            font-size: 1rem;
+            line-height: 1.5;
+            color: var(--dark-gray);
+        }
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--bay-of-many);
+        }
+
+        .contact form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid var(--dark-gray);
+            border-radius: 4px;
+        }
+
+        .form-group button {
+            padding: 10px;
+            font-size: 1.1rem;
+            background-color: var(--denim);
+            color: var(--white);
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .form-group button:hover {
+            background-color: var(--jaffa);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: var(--dark-gray);
+            color: var(--white);
+            border-radius: 8px;
+        }
+
+        footer a {
+            color: var(--white);
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="https://aroundthehouse.services/static/Color%20logo%20-%20no%20background.png" alt="Around the House Logo">
+        </header>
+
+        <section class="hero">
+            <h1>Expert Pressure Washing Services</h1>
+            <p>Transform your home with our professional pressure washing services. Driveway, house, and deck cleaning available. Get a free quote today!</p>
+            <a href="#contact" class="cta-button">Get a Free Quote</a>
+        </section>
+
+        <section class="services">
+            <h2>Our Services</h2>
+            <div class="service-item">
+                <img src="https://aroundthehouse.services/static/pictures/melissa1.png" alt="Driveway Cleaning">
+                <h3>Driveway Cleaning</h3>
+                <p>Make your driveway look brand new with our powerful, safe, and eco-friendly pressure washing services.</p>
+            </div>
+            <div class="service-item">
+                <img src="https://aroundthehouse.services/static/pictures/ath8.png" alt="House Washing">
+                <h3>House Washing</h3>
+                <p>Refresh your home's exterior with our comprehensive house washing service, designed to remove dirt and grime effectively.</p>
+            </div>
+            <div class="service-item">
+                <img src="https://aroundthehouse.services/static/pictures/noclean5.png" alt="Deck and Patio Cleaning">
+                <h3>Deck and Patio Cleaning</h3>
+                <p>Restore the beauty of your outdoor spaces with our specialized deck and patio cleaning services.</p>
+            </div>
+        </section>
+
+        <section class="about">
+            <h2>About Around the House</h2>
+            <p>More than just a business, Around the House is a continuation of a family legacy. We are dedicated to transforming homes across Louisiana with our expert pressure washing and home care services.</p>
+            <img src="https://aroundthehouse.services/static/pictures/story1.jpg" alt="About Us Image">
+        </section>
+
+        <section class="testimonials">
+            <h2>What Our Clients Say</h2>
+            <div class="testimonial-item">
+                <p>"John & Damien did an excellent job on my house, walkways & driveway. All the concrete looks brand new. Highly recommend!" - Melissa C., Baton Rouge</p>
+            </div>
+            <div class="testimonial-item">
+                <p>"Rapid response time and dependable. Great job!" - Lonnie C., Prairieville</p>
+            </div>
+            <div class="testimonial-item">
+                <p>"The cleaners were efficient and thorough, and went above and beyond expectations. We plan to hire them on an ongoing basis." - Susan L., Hammond</p>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2>Contact Us</h2>
+            <form id="contact-form" name="contact" method="POST" data-netlify="true">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Send</button>
+                </div>
+            </form>
+        </section>
+
+        <footer>
+            <p>&copy; 2024 Around the House. All rights reserved.</p>
+            <a href="/privacy.html">Privacy Policy</a> |
+            <a href="/termsofservice.html">Terms of Service</a>
+        </footer>
+    </div>
+</body>
+</html>
