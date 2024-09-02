@@ -1,15 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const hostname = window.location.hostname;
-    const isLocal = hostname === "localhost" || hostname === "127.0.0.1";
-    const currentPath = window.location.pathname.replace(/\/$/, ""); // Remove trailing slash if any
-    const storageKey = "locationRedirected"; // Key for sessionStorage to store the redirect state
-
+    let hostname = window.location.hostname;
+    let isLocal = hostname === "localhost" || hostname === "127.0.0.1";
+    let currentPath = window.location.pathname.replace(/\/$/, "");
+    let storageKey = "locationRedirected"; // Key for sessionStorage
     console.log("Hostname:", hostname);
     console.log("Is local environment:", isLocal);
     console.log("Current path:", currentPath);
 
-    // Check if the user's location is in the list of predefined locations
-    const locations = {
+    let locations = {
         "baton-rouge": "Baton Rouge",
         "zachary": "Zachary",
         "prairieville": "Prairieville",
@@ -25,78 +23,75 @@ document.addEventListener("DOMContentLoaded", function () {
         "geismar": "Geismar"
     };
 
-    // Use Geolocation API to get the user's current position
+    // Check if geolocation is supported
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(position => {
-            const lat = position.coords.latitude;
-            const lon = position.coords.longitude;
+        navigator.geolocation.getCurrentPosition(
+            position => {
+                let latitude = position.coords.latitude;
+                let longitude = position.coords.longitude;
+                fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`)
+                    .then(response => response.json())
+                    .then(data => {
+                        let userLocation = data.city.toLowerCase().replace(/\s+/g, "-");
+                        console.log("User location (formatted):", userLocation);
 
-            // Using reverse geocoding to get the city from the coordinates
-            fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lon}&localityLanguage=en`)
-                .then(response => response.json())
-                .then(data => {
-                    const userLocation = data.city.toLowerCase().replace(/\s+/g, '-'); // Convert city name to lowercase and replace spaces with hyphens
-                    console.log("User location (formatted):", userLocation);
+                        let expectedPath = isLocal ? `/public/${userLocation}` : `/${userLocation}`;
+                        expectedPath = expectedPath.replace(/\/$/, ""); // Trim any trailing slashes
+                        console.log("Expected path based on location:", expectedPath);
 
-                    const expectedPath = isLocal ? `/public/${userLocation}` : `/${userLocation}`;
-                    const normalizedExpectedPath = expectedPath.replace(/\/$/, ""); // Remove trailing slash if any
+                        let isOnCorrectPage =
+                            currentPath === expectedPath ||
+                            (currentPath === "" || currentPath === "/" || currentPath === "/index.html") && userLocation === "baton-rouge";
 
-                    console.log("Expected path based on location:", normalizedExpectedPath);
+                        console.log("Is on correct page:", isOnCorrectPage);
 
-                    const isHomePage = currentPath === "" || currentPath === "/" || currentPath === "/index.html";
-                    const isOnCorrectPage = currentPath === normalizedExpectedPath || (isHomePage && userLocation === "baton-rouge");
+                        if (sessionStorage.getItem(storageKey) === "true") {
+                            console.log("User has already been redirected or declined redirection.");
+                            return;
+                        }
 
-                    console.log("Is on correct page:", isOnCorrectPage);
-
-                    // Check if the user has already been redirected or declined
-                    if (sessionStorage.getItem(storageKey) === "true") {
-                        console.log("User has already been redirected or declined redirection.");
-                        return;
-                    }
-
-                    if (locations[userLocation]) {
-                        if (!isOnCorrectPage) {
-                            console.log("User is not on the correct page, asking for redirection consent.");
-                            const confirmation = confirm(`It looks like you're in ${locations[userLocation]}. Would you like to visit the ${locations[userLocation]} page?`);
-                            if (confirmation) {
-                                console.log("User accepted redirection.");
-                                sessionStorage.setItem(storageKey, "true");
-                                window.location.href = normalizedExpectedPath;
+                        if (locations[userLocation]) {
+                            if (!isOnCorrectPage) {
+                                let confirmation = confirm(`It looks like you're in ${locations[userLocation]}. Would you like to visit the ${locations[userLocation]} page?`);
+                                if (confirmation) {
+                                    sessionStorage.setItem(storageKey, "true");
+                                    window.location.href = expectedPath;
+                                } else {
+                                    sessionStorage.setItem(storageKey, "true");
+                                }
                             } else {
-                                console.log("User declined redirection.");
-                                sessionStorage.setItem(storageKey, "true");
+                                console.log("User is already on the correct page.");
                             }
                         } else {
-                            console.log("User is already on the correct page.");
+                            console.log("User's location is not served, redirecting to Baton Rouge.");
+                            let fallbackPath = isLocal ? "/public/baton-rouge" : "/baton-rouge";
+                            if (currentPath !== fallbackPath) {
+                                sessionStorage.setItem(storageKey, "true");
+                                window.location.href = fallbackPath;
+                            }
                         }
-                    } else {
-                        console.log("User's location is not served, redirecting to Baton Rouge.");
-                        const fallbackPath = isLocal ? '/public/baton-rouge' : '/baton-rouge';
-                        if (currentPath !== fallbackPath) {
+                    })
+                    .catch(error => {
+                        console.error("Error during reverse geocoding:", error);
+                        let fallbackPath = isLocal ? "/public/baton-rouge" : "/baton-rouge";
+                        if (currentPath !== fallbackPath && sessionStorage.getItem(storageKey) !== "true") {
                             sessionStorage.setItem(storageKey, "true");
                             window.location.href = fallbackPath;
                         }
-                    }
-                })
-                .catch(error => {
-                    console.error("Error during reverse geocoding:", error);
-                    const fallbackPath = isLocal ? '/public/baton-rouge' : '/baton-rouge';
-                    if (currentPath !== fallbackPath && sessionStorage.getItem(storageKey) !== "true") {
-                        sessionStorage.setItem(storageKey, "true");
-                        window.location.href = fallbackPath;
-                    }
-                });
-        }, error => {
-            console.error("Error getting user's location:", error);
-            const fallbackPath = isLocal ? '/public/baton-rouge' : '/baton-rouge';
-            if (currentPath !== fallbackPath && sessionStorage.getItem(storageKey) !== "true") {
-                sessionStorage.setItem(storageKey, "true");
-                window.location.href = fallbackPath;
+                    });
+            },
+            error => {
+                console.error("Error getting user's location:", error);
+                let fallbackPath = isLocal ? "/public/baton-rouge" : "/baton-rouge";
+                if (currentPath !== fallbackPath && sessionStorage.getItem(storageKey) !== "true") {
+                    sessionStorage.setItem(storageKey, "true");
+                    window.location.href = fallbackPath;
+                }
             }
-        });
+        );
     } else {
         console.error("Geolocation is not supported by this browser.");
-        const fallbackPath = isLocal ? '/public/baton-rouge' : '/baton-rouge';
+        let fallbackPath = isLocal ? "/public/baton-rouge" : "/baton-rouge";
         if (currentPath !== fallbackPath && sessionStorage.getItem(storageKey) !== "true") {
             sessionStorage.setItem(storageKey, "true");
             window.location.href = fallbackPath;
