@@ -1,34 +1,38 @@
 document.addEventListener("DOMContentLoaded", function () {
+    // Scroll animation for mobile and desktop
     let sections = document.querySelectorAll("section");
-    let handleScroll = () => {
+    const revealSection = () => {
         sections.forEach(section => {
-            let rectTop = section.getBoundingClientRect().top;
-            let rectBottom = section.getBoundingClientRect().bottom;
-            if (rectTop < 0.85 * window.innerHeight && rectBottom > 0) {
+            let sectionTop = section.getBoundingClientRect().top;
+            let sectionBottom = section.getBoundingClientRect().bottom;
+            let triggerPoint = window.innerHeight * 0.85;
+
+            if (sectionTop < triggerPoint && sectionBottom > 0) {
                 section.classList.add("visible");
             } else {
                 section.classList.remove("visible");
             }
         });
     };
+    window.addEventListener("scroll", revealSection);
+    revealSection(); // Initial check to reveal sections already in view
 
-    window.addEventListener("scroll", handleScroll);
-    handleScroll();
-
-    // Smooth scroll for internal links
+    // Smooth Scroll for Anchor Links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function (event) {
-            event.preventDefault();
-            let headerHeight = document.querySelector("header").offsetHeight;
-            let targetSection = document.querySelector(this.getAttribute("href"));
-            let scrollPosition = targetSection.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            let headerOffset = document.querySelector("header").offsetHeight;
+            let element = document.querySelector(this.getAttribute("href"));
+            let elementPosition = element.getBoundingClientRect().top;
+            let offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
             window.scrollTo({
-                top: scrollPosition,
-                behavior: "smooth",
+                top: offsetPosition,
+                behavior: "smooth"
             });
 
-            let navMenu = document.getElementById("nav-menu");
+            // Close the mobile menu after clicking an anchor link
             if (navMenu.classList.contains("show")) {
                 navMenu.classList.remove("show");
                 navMenu.classList.add("hide");
@@ -36,32 +40,41 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    let menuToggle = document.getElementById("menu-toggle");
-    let navMenu = document.getElementById("nav-menu");
-    let header = document.querySelector("header");
+    // Toggle Navigation Menu
+    const menuToggle = document.getElementById("menu-toggle");
+    const navMenu = document.getElementById("nav-menu");
+    const closeMenu = document.getElementById("close-menu");
+    const header = document.querySelector("header");
 
-    // Ensure the elements exist before adding event listeners
-    if (menuToggle && navMenu && header) {
-        menuToggle.addEventListener("click", function () {
-            if (navMenu.classList.contains("show")) {
-                navMenu.classList.remove("show");
-                navMenu.classList.add("hide");
-            } else {
-                navMenu.classList.remove("hide");
-                navMenu.classList.add("show");
-                navMenu.style.top = `${header.offsetHeight}px`;
-            }
-        });
+    function adjustNavMenuPosition() {
+        navMenu.style.top = `${header.offsetHeight}px`;
     }
 
-    // FAQ toggle functionality
-    document.querySelectorAll(".faq-item h3").forEach(faq => {
-        faq.addEventListener("click", () => {
-            let parentItem = faq.parentElement;
-            document.querySelectorAll(".faq-item").forEach(item => {
-                if (item !== parentItem) item.classList.remove("active");
+    menuToggle.addEventListener("click", function () {
+        if (navMenu.classList.contains("show")) {
+            navMenu.classList.remove("show");
+            navMenu.classList.add("hide");
+        } else {
+            navMenu.classList.remove("hide");
+            navMenu.classList.add("show");
+            adjustNavMenuPosition(); // Adjust the menu position when opened
+        }
+    });
+
+    closeMenu.addEventListener("click", function () {
+        navMenu.classList.remove("show");
+        navMenu.classList.add("hide");
+    });
+
+    // FAQ Toggle
+    document.querySelectorAll(".faq-item h3").forEach(item => {
+        item.addEventListener("click", () => {
+            let parent = item.parentElement;
+            document.querySelectorAll(".faq-item").forEach(faq => {
+                if (faq !== parent) faq.classList.remove("active");
             });
-            parentItem.classList.toggle("active");
+            parent.classList.toggle("active");
         });
     });
+
 });
