@@ -32,11 +32,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 behavior: "smooth"
             });
 
-            // Close the mobile menu after clicking an anchor link
-            if (navMenu.classList.contains("show")) {
-                navMenu.classList.remove("show");
-                navMenu.classList.add("hide");
-            }
         });
     });
 
