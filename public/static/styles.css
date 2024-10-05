@@ -1251,13 +1251,17 @@ footer p {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center; /* Ensures proper centering vertically */
+    position: relative;
 }
 
+/* Thumbtack logo styling */
 .thumbtack-widget .tt-logo {
     width: 150px;
     margin-bottom: 10px;
 }
 
+/* Anchor link styling */
 .thumbtack-widget a {
     text-decoration: none;
     font-size: 1.2rem;
@@ -1267,26 +1271,30 @@ footer p {
     transition: color 0.3s ease;
 }
 
+/* Hover state for the link */
 .thumbtack-widget a:hover {
-    color: var(--denim); /* On hover, change to vibrant blue */
+    color: var(--denim); /* Hover effect for the link */
 }
 
+/* Stars and reviews container */
 .thumbtack-widget #tt-dynamic {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center; /* Centers the stars and review count */
     gap: 5px;
+    margin-bottom: 10px;
 }
 
+/* Star images */
 .thumbtack-widget #tt-dynamic img {
     width: 24px;
     height: 24px;
 }
 
+/* Review count styling */
 .thumbtack-widget #tt-dynamic span {
     font-size: 1rem;
     color: var(--dark-gray);
-    margin-left: 5px;
 }
 
 /* Ensuring the widget is responsive */
@@ -1294,6 +1302,7 @@ footer p {
     .thumbtack-widget {
         max-width: 100%;
         padding: 15px;
+        margin: 20px auto; /* Adds more margin for mobile */
     }
 
     .thumbtack-widget .tt-logo {
