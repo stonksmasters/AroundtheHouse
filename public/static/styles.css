@@ -1238,3 +1238,74 @@ footer p {
         font-size: 0.9rem;
     }
 }
+/* Thumbtack Widget Styling */
+.thumbtack-widget {
+    background-color: var(--offwhite); /* Blends with the existing off-white background */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 40px auto;
+    max-width: 600px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.thumbtack-widget .tt-logo {
+    width: 150px;
+    margin-bottom: 10px;
+}
+
+.thumbtack-widget a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: var(--dark-gray);
+    font-weight: 600;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.thumbtack-widget a:hover {
+    color: var(--denim); /* On hover, change to vibrant blue */
+}
+
+.thumbtack-widget #tt-dynamic {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.thumbtack-widget #tt-dynamic img {
+    width: 24px;
+    height: 24px;
+}
+
+.thumbtack-widget #tt-dynamic span {
+    font-size: 1rem;
+    color: var(--dark-gray);
+    margin-left: 5px;
+}
+
+/* Ensuring the widget is responsive */
+@media (max-width: 768px) {
+    .thumbtack-widget {
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    .thumbtack-widget .tt-logo {
+        width: 120px;
+    }
+
+    .thumbtack-widget a {
+        font-size: 1rem;
+    }
+
+    .thumbtack-widget #tt-dynamic img {
+        width: 20px;
+        height: 20px;
+    }
+}
