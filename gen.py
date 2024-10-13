@@ -2,7 +2,7 @@ import json
 import os
 
 # Load the locations data
-with open('locations.json') as json_file:
+with open('locations.json', 'r') as json_file:
     locations = json.load(json_file)
 
 # Read the HTML template
@@ -19,6 +19,7 @@ for location_key, location_data in locations.items():
     
     # Replace the placeholders with actual data
     filled_template = template.replace('[[ location ]]', location_data['location'])
+    filled_template = filled_template.replace('[[ location_slug ]]', location_key)
     filled_template = filled_template.replace('[[ latitude ]]', location_data['latitude'])
     filled_template = filled_template.replace('[[ longitude ]]', location_data['longitude'])
     

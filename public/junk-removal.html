@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Junk Removal Estimate - Around the House</title>
+    <link rel="stylesheet" href="/static/styles.min.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1FJZ6M3L89"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-1FJZ6M3L89');
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo-container">
+                <img id="logo" src="/static/Color logo - no background.png" alt="Around the House Logo">
+            </div>
+            <nav>
+                <div class="menu-toggle" id="menu-toggle" aria-label="Open Menu" role="button" tabindex="0" aria-expanded="false">
+                    <div class="hamburger"></div>
+                </div>
+                <ul id="nav-menu" class="nav-menu" role="navigation" aria-hidden="true">
+                    <li><a href="/#services" class="focusable">Services</a></li>
+                    <li><a href="/#about" class="focusable">About Us</a></li>
+                    <li><a href="/#testimonials" class="focusable">Testimonials</a></li>
+                    <li><a href="/#faq" class="focusable">FAQ</a></li>
+                    <li><a href="/#gallery" class="focusable">Gallery</a></li>
+                    <li><a href="/#contact" class="focusable">Contact</a></li>
+                    <li class="close-btn">
+                        <button id="close-menu" aria-label="Close Menu">Close</button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="junk-removal-estimate" class="contact">
+        <div class="container">
+            <h2>Request a Quote for Junk Removal</h2>
+            <form id="junk-removal-form" name="junk-removal" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html">
+                <!-- Hidden input for spam protection -->
+                <input type="hidden" name="bot-field" />
+                <!-- Hidden input to specify the form name -->
+                <input type="hidden" name="form-name" value="junk-removal" />
+                <!-- Hidden input for redirecting to thank you page -->
+                <input type="hidden" name="redirect" value="/thank-you.html" />
+    
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+    
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+    
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+    
+                <div class="form-group">
+                    <label for="address">Pickup Address:</label>
+                    <input type="text" id="address" name="address" required>
+                </div>
+    
+                <div class="form-group">
+                    <label for="junk-amount">Amount of Junk:</label>
+                    <select id="junk-amount" name="junk-amount" required>
+                        <option value="1-truck">1 Pickup Truck Load ($115)</option>
+                        <option value="2-trucks">2 Pickup Truck Loads ($180)</option>
+                        <option value="3-trucks">3 Pickup Truck Loads ($250)</option>
+                        <option value="4-plus-trucks">4 or More Pickup Truck Loads ($320+)</option>
+                    </select>
+                </div>
+    
+                <div class="form-group">
+                    <label for="junk-type">Type of Junk:</label>
+                    <select id="junk-type" name="junk-type" required>
+                        <option value="household-items">Household Items</option>
+                        <option value="yard-waste">Yard Waste</option>
+                        <option value="construction-debris">Construction Debris</option>
+                        <option value="appliances">Appliances</option>
+                        <option value="mixed">Mixed Items</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+    
+                <div class="form-group">
+                    <label for="access">Accessibility:</label>
+                    <select id="access" name="access" required>
+                        <option value="curbside">Curbside</option>
+                        <option value="garage">Garage</option>
+                        <option value="inside-home">Inside Home</option>
+                        <option value="backyard">Backyard</option>
+                        <option value="upstairs">Upstairs</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+    
+                <div class="form-group">
+                    <label for="additional-info">Additional Information:</label>
+                    <textarea id="additional-info" name="additional-info" placeholder="Any special instructions or details?"></textarea>
+                </div>
+    
+                <button type="submit">Request Estimate</button>
+            </form>
+        </div>
+    </section>
+    
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Around the House. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="/privacy.html">Privacy Policy</a>
+                <a href="/termsofservice.html">Terms of Service</a>
+                <a href="/#about">About Us</a>
+                <a href="/#contact">Contact</a>
+            </div>
+            <div class="footer-social">
+                <a href="https://www.facebook.com/yourpage" target="_blank" aria-label="Facebook">
+                    <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
+                </a>
+                <a href="https://www.x.com/yourprofile" target="_blank" aria-label="X (formerly Twitter)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16">
+                        <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/>
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/yourprofile" target="_blank" aria-label="Instagram">
+                    <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/static/script.min.js"></script>
+</body>
+</html>
