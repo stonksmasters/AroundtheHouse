@@ -59,7 +59,7 @@
           "name": "Baker"
         },
         "hasMap": "https://www.google.com/maps/place/3101+Highland+Rd,+Baton+Rouge,+LA+70802",
-        "serviceOffer": [
+        "makesOffer": [
           {
             "@type": "Offer",
             "itemOffered": {
@@ -109,10 +109,14 @@
     <!-- Additional SEO Meta Tags -->
     <link rel="canonical" href="https://aroundthehouse.services/baker/">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-..." crossorigin="anonymous">
     <link rel="stylesheet" href="/static/styles.min.css">
+
+    <!-- Scripts -->
     <script defer src="/static/geo-redirect.min.js"></script>
-     
+
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-1FJZ6M3L89"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -121,6 +125,7 @@
         gtag('config', 'G-1FJZ6M3L89');
     </script>
 
+    <!-- Main Script -->
     <script defer src="/static/script.min.js"></script>
 </head>
 <body>
@@ -130,10 +135,10 @@
                 <img id="logo" src="/static/Color logo - no background.png" alt="Around the House Logo">
             </div>
             <nav>
-                <div class="menu-toggle" id="menu-toggle" aria-label="Open Menu" role="button" tabindex="0" aria-expanded="false">
+                <button class="menu-toggle" id="menu-toggle" aria-label="Open Menu" aria-expanded="false">
                     <div class="hamburger"></div>
-                </div>
-                <ul id="nav-menu" class="nav-menu" role="navigation" aria-hidden="true">
+                </button>
+                <ul id="nav-menu" class="nav-menu" aria-hidden="true">
                     <li><a href="#services" class="focusable">Services</a></li>
                     <li><a href="#about" class="focusable">About Us</a></li>
                     <li><a href="#testimonials" class="focusable">Testimonials</a></li>
@@ -148,162 +153,173 @@
         </div>
     </header>
     
-    <section class="hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content container">
-            <h1>Professional Junk Removal, Moving Services, and Pressure Washing in Baker</h1>
-            <p>Let Around the House handle all your home service needs in Baker. Get a free quote today!</p>
-            <div class="cta-buttons">
-                <button class="primary" onclick="window.location.href='#services'">Get a Free Quote</button>
-                <button class="secondary" onclick="window.location.href='#services'">Our Services</button>
-                <button class="secondary" onclick="window.location.href='#contact'">Contact Us</button>
-            </div>
-        </div>
-    </section>
-
-    <section id="services" class="services">
-        <div class="container">
-            <h2>Our Services in Baker</h2>
-            <div class="service-list" style="display: flex; flex-wrap: wrap; justify-content: space-around;">
-                <div class="service-item" style="text-align: center;">
-                    <i class="fas fa-dumpster" style="font-size: 64px; color: var(--denim); margin: 0 auto; display: block;"></i>
-                    <h3>Baker Junk Removal</h3>
-                    <p>Efficient and eco-friendly junk removal services to help you declutter your home or office.</p>
-                    <button onclick="window.location.href='/junk-removal.html'">Get an Estimate</button>
-                </div>
-                <div class="service-item" style="text-align: center;">
-                    <i class="fas fa-truck-moving" style="font-size: 64px; color: var(--jaffa); margin: 0 auto; display: block;"></i>
-                    <h3>Baker Moving Services</h3>
-                    <p>Professional moving services to make your relocation smooth and stress-free.</p>
-                    <button onclick="window.location.href='/moving-services.html'">Get an Estimate</button>
-                </div>
-                <div class="service-item" style="text-align: center;">
-                    <i class="fas fa-water" style="font-size: 64px; color: var(--yellow-orange); margin: 0 auto; display: block;"></i>
-                    <h3>Baker Pressure Washing</h3>
-                    <p>Keep your property looking its best with our professional pressure washing services.</p>
-                    <button onclick="window.location.href='/pressure-washing.html'">Get an Estimate</button>
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-content container">
+                <h1>Professional Junk Removal, Moving Services, and Pressure Washing in Baker</h1>
+                <p>Let Around the House handle all your home service needs in Baker. Get a free quote today!</p>
+                <div class="cta-buttons">
+                    <button class="primary" onclick="window.location.href='#services'">Get a Free Quote</button>
+                    <button class="secondary" onclick="window.location.href='#services'">Our Services</button>
+                    <button class="secondary" onclick="window.location.href='#contact'">Contact Us</button>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="about" class="about">
-        <div class="container about-container">
-            <h2 class="section-header">About Us</h2>
-            <div class="about-grid">
-                <div class="about-text">
-                    <h3>Our Story</h3>
+        <!-- Services Section -->
+        <section id="services" class="services">
+            <div class="container">
+                <h2>Our Services in Baker</h2>
+                <div class="service-list">
+                    <div class="service-item">
+                        <i class="fas fa-dumpster" style="font-size: 64px; color: var(--denim);"></i>
+                        <h3>Baker Junk Removal</h3>
+                        <p>Efficient and eco-friendly junk removal services to help you declutter your home or office.</p>
+                        <button onclick="window.location.href='/junk-removal.html'">Get an Estimate</button>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-truck-moving" style="font-size: 64px; color: var(--jaffa);"></i>
+                        <h3>Baker Moving Services</h3>
+                        <p>Professional moving services to make your relocation smooth and stress-free.</p>
+                        <button onclick="window.location.href='/moving-services.html'">Get an Estimate</button>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-water" style="font-size: 64px; color: var(--yellow-orange);"></i>
+                        <h3>Baker Pressure Washing</h3>
+                        <p>Keep your property looking its best with our professional pressure washing services.</p>
+                        <button onclick="window.location.href='/pressure-washing.html'">Get an Estimate</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about" class="about">
+            <div class="container about-container">
+                <h2 class="section-header">About Us</h2>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <h3>Our Story</h3>
+                        <p>
+                            <strong>Around the House</strong> is more than just a business; it's a continuation of a family legacy. Founded by cousins <strong>John Borg</strong> and <strong>Damien Granger</strong>, the company started as a remodeling business under John’s father. After his passing, we rebranded and expanded to offer comprehensive services, including junk removal and moving services, honoring his memory by transforming homes across Louisiana.
+                        </p>
+                        <p>
+                            Originally known as <em>"Pressure Bros,"</em> we discovered an old flyer from the original company and rebranded to <strong>"Around the House"</strong> to reflect our broader range of services. We’re proud to serve our local community with dedication, care, and a commitment to excellence.
+                        </p>
+                    </div>
+                    <div class="carousel-container">
+                        <div class="carousel">
+                            <img src="/static/pictures/story1.jpg" alt="Our Team at Work in Baker">
+                            <img src="/static/pictures/story2.jpg" alt="Around the House Team">
+                            <img src="/static/pictures/story3.jpg" alt="Providing Services in Baker">
+                            <img src="/static/pictures/story4.jpg" alt="Community Engagement in Baker">
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="about-values">
+                    <h3>Our Mission & Values</h3>
                     <p>
-                        <strong>Around the House</strong> is more than just a business; it's a continuation of a family legacy. Founded by cousins <strong>John Borg</strong> and <strong>Damien Granger</strong>, the company started as a remodeling business under John’s father. After his passing, we rebranded and expanded to offer comprehensive services, including junk removal and moving services, honoring his memory by transforming homes across Louisiana.
+                        Our mission is simple: to provide top-quality home care services to the Baker community with <strong>integrity</strong>, <strong>transparency</strong>, and a personal touch. We believe in building lasting relationships with our clients, many of whom have become like family. We take pride in offering transparent, no-surprise quotes, and we strive to exceed expectations on every job, whether it’s pressure washing, junk removal, or lawn care.
                     </p>
+                    <div class="values-list">
+                        <div class="value-item">
+                            <i class="fas fa-handshake" style="color: var(--denim); font-size: 48px;"></i>
+                            <h4>Integrity</h4>
+                            <p>We do what’s right, even when no one is watching. Our clients trust us to deliver honest, reliable services every time.</p>
+                        </div>
+                        <div class="value-item">
+                            <i class="fas fa-award" style="color: var(--jaffa); font-size: 48px;"></i>
+                            <h4>Excellence</h4>
+                            <p>We are committed to delivering the highest quality of work, ensuring that every job is completed to perfection.</p>
+                        </div>
+                        <div class="value-item">
+                            <i class="fas fa-users" style="color: var(--yellow-orange); font-size: 48px;"></i>
+                            <h4>Community</h4>
+                            <p>We are proud members of the Baker community and believe in giving back through exceptional service and local involvement.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="about-team">
+                    <h3>Meet the Team</h3>
+                    <div class="team-grid">
+                        <div class="team-member">
+                            <img src="/static/pictures/story2.jpg" alt="John Borg, Founder of Around the House in Baker">
+                            <h4>John Borg</h4>
+                            <p>John handles website development, branding, and customer relations. His dedication to detail ensures every project reflects the Around the House standard of quality.</p>
+                        </div>
+                        <div class="team-member">
+                            <img src="/static/pictures/dame.jpg" alt="Damien Granger, Co-founder of Around the House in Baker">
+                            <h4>Damien Granger</h4>
+                            <p>Damien manages social media and marketing, bringing our message to the Baker community with creativity and passion.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="about-future">
+                    <h3>Looking Ahead</h3>
                     <p>
-                        Originally known as <em>"Pressure Bros,"</em> we discovered an old flyer from the original company and rebranded to <strong>"Around the House"</strong> to reflect our broader range of services. We’re proud to serve our local community with dedication, care, and a commitment to excellence.
+                        As we look to the future, we aim to expand our reach and continue to make a positive impact in every community we serve. We’re excited about the opportunity to connect with more people and bring our high standards of service to homes across the region. Whether it’s your first time working with us or you’ve been a client for years, we’re here to help with all your home care needs.
                     </p>
-                </div>
-                <div class="carousel-container">
-                    <div class="carousel">
-                        <img src="/static/pictures/story1.jpg" alt="Our Team at Work in Baker">
-                        <img src="/static/pictures/story2.jpg" alt="Around the House Team">
-                        <img src="/static/pictures/story3.jpg" alt="Providing Services in Baker">
-                        <img src="/static/pictures/story4.jpg" alt="Community Engagement in Baker">
-                    </div>
+                    <button class="primary inline-cta" onclick="window.location.href='#services'">Get a Quote</button>
                 </div>
             </div>
-    
-            <div class="about-values">
-                <h3>Our Mission & Values</h3>
-                <p>
-                    Our mission is simple: to provide top-quality home care services to the Baker community with <strong>integrity</strong>, <strong>transparency</strong>, and a personal touch. We believe in building lasting relationships with our clients, many of whom have become like family. We take pride in offering transparent, no-surprise quotes, and we strive to exceed expectations on every job, whether it’s pressure washing, junk removal, or lawn care.
-                </p>
-                <div class="values-list">
-                    <div class="value-item">
-                        <i class="fas fa-handshake" style="color: var(--denim); font-size: 48px;"></i>
-                        <h4>Integrity</h4>
-                        <p>We do what’s right, even when no one is watching. Our clients trust us to deliver honest, reliable services every time.</p>
-                    </div>
-                    <div class="value-item">
-                        <i class="fas fa-award" style="color: var(--jaffa); font-size: 48px;"></i>
-                        <h4>Excellence</h4>
-                        <p>We are committed to delivering the highest quality of work, ensuring that every job is completed to perfection.</p>
-                    </div>
-                    <div class="value-item">
-                        <i class="fas fa-users" style="color: var(--yellow-orange); font-size: 48px;"></i>
-                        <h4>Community</h4>
-                        <p>We are proud members of the Baker community and believe in giving back through exceptional service and local involvement.</p>
-                    </div>
-                </div>
-            </div>
-    
-            <div class="about-team">
-                <h3>Meet the Team</h3>
-                <div class="team-grid">
-                    <div class="team-member">
-                        <img src="/static/pictures/story2.jpg" alt="John Borg, Founder of Pressure Washing Company in Baker">
-                        <h4>John Borg</h4>
-                        <p>John handles website development, branding, and customer relations. His dedication to detail ensures every project reflects the Around the House standard of quality.</p>
-                    </div>
-                    <div class="team-member">
-                        <img src="/static/pictures/dame.jpg" alt="Damien Granger, Founder of Pressure Washing Company in Baker">
-                        <h4>Damien Granger</h4>
-                        <p>Damien manages social media and marketing, bringing our message to the Baker community with creativity and passion.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+        </section>
 
-
-    </section>
-    <section id="testimonials" class="testimonials">
-        <div class="container">
-            <h2>What Our Clients Say</h2>
-            <div class="testimonial-grid">
-                <div class="testimonial-item">
-                    <div class="before-after">
-                        <img src="/static/pictures/melissa1.png" alt="Before cleaning in Baton Rouge">
-                        <img src="/static/pictures/melissa2.png" alt="After cleaning in Baton Rouge">
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="testimonials">
+            <div class="container">
+                <h2>What Our Clients Say</h2>
+                <div class="testimonial-grid">
+                    <div class="testimonial-item">
+                        <div class="before-after">
+                            <img src="/static/pictures/melissa1.png" alt="Before cleaning in Baton Rouge">
+                            <img src="/static/pictures/melissa2.png" alt="After cleaning in Baton Rouge">
+                        </div>
+                        <div class="testimonial-content">
+                            <p>"John & Damien did an excellent job on my house, walkways & driveway. I have an older home & they did a great job getting my house clean & protecting my older wood & paint. All the concrete looks brand new. Wish I had before pictures (only after). I plan to have them come every 6 months for a clean. Great job! Highly recommend!"</p>
+                            <p>- Melissa C., Baton Rouge</p>
+                        </div>
                     </div>
-                    <div class="testimonial-content">
-                        <p>"John & Damien did an excellent job on my house, walkways & driveway. I have an older home & they did a great job getting my house clean & protecting my older wood & paint. All the concrete looks brand new. Wish I had before pictures ( only after).
-                            I plan to have them come every 6 months for a clean. Great job! Highly recommend!"</p>
-                        <p>- Melissa C., Baton Rouge</p>
+                    <div class="testimonial-item">
+                        <div class="before-after">
+                            <img src="/static/pictures/carportdirty.png" alt="Before cleaning in Prairieville">
+                            <img src="/static/pictures/Carportclean (1).png" alt="After cleaning in Prairieville">
+                        </div>
+                        <div class="testimonial-content">
+                            <p>"Rapid response time and dependable."</p>
+                            <p>- Lonnie C., Prairieville</p>
+                        </div>
                     </div>
-                </div>
-                <div class="testimonial-item">
-                    <div class="before-after">
-                        <img src="/static/pictures/carportdirty.png" alt="Before cleaning in Prairieville">
-                        <img src="/static/pictures/Carportclean (1).png" alt="After cleaning in Prairieville">
-                    </div>
-                    <div class="testimonial-content">
-                        <p>"Rapid response time and dependable."</p>
-                        <p>- Lonnie C., Prairieville</p>
-                    </div>
-                </div>
-                <div class="testimonial-item">
-                    <div class="before-after">
-                        <img src="/static/pictures/ath6.png" alt="Before cleaning in Hammond">
-                        <img src="/static/pictures/ath9.png" alt="After cleaning in Hammond">
-                    </div>
-                    <div class="testimonial-content">
-                        <p>"Around the House cleaners were quick to respond, communicative, dependable and punctual. The two cleaners tackled a difficult job and did excellent work and they were a joy to work with. They were efficient and thorough, and went above and beyond expectations. We definitely plan to hire them on an ongoing basis."</p>
-                        <p>- Susan L., Hammond</p>
+                    <div class="testimonial-item">
+                        <div class="before-after">
+                            <img src="/static/pictures/ath6.png" alt="Before cleaning in Hammond">
+                            <img src="/static/pictures/ath9.png" alt="After cleaning in Hammond">
+                        </div>
+                        <div class="testimonial-content">
+                            <p>"Around the House cleaners were quick to respond, communicative, dependable, and punctual. The two cleaners tackled a difficult job and did excellent work and they were a joy to work with. They were efficient and thorough, and went above and beyond expectations. We definitely plan to hire them on an ongoing basis."</p>
+                            <p>- Susan L., Hammond</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    
-    <section id="faq" class="faq">
+        </section>
+        
+           <section id="faq" class="faq">
         <div class="container">
             <h2>Frequently Asked Questions</h2>
             <div class="faq-list">
                 <div class="faq-item">
-                    <h3 id="faq1" class="faq-question">What areas do you serve in Baker?</h3>
+                    <h3 id="faq1" class="faq-question">What areas do you serve in [[ location ]]?</h3>
                     <div class="faq-answer" aria-labelledby="faq1">
-                        <p>We proudly serve Baker and the surrounding areas, including nearby neighborhoods and suburbs. If you’re unsure whether we serve your area, feel free to <a href="#contact">contact us</a> for more details.</p>
+                        <p>We proudly serve [[ location ]] and the surrounding areas, including nearby neighborhoods and suburbs. If you’re unsure whether we serve your area, feel free to <a href="#contact">contact us</a> for more details.</p>
                     </div>
                 </div>
                 <div class="faq-item">
-                    <h3 id="faq2" class="faq-question">How much does pressure washing cost in Baker?</h3>
+                    <h3 id="faq2" class="faq-question">How much does pressure washing cost in [[ location ]]?</h3>
                     <div class="faq-answer" aria-labelledby="faq2">
                         <p>Pricing depends on the size of the area that needs to be cleaned and the type of service. We provide free, no-obligation quotes based on your specific needs. Contact us with your address, and we'll measure the area using Google Earth to give you an accurate estimate.</p>
                     </div>
@@ -323,7 +339,7 @@
                 <div class="faq-item">
                     <h3 id="faq5" class="faq-question">How often should I have my home pressure washed?</h3>
                     <div class="faq-answer" aria-labelledby="faq5">
-                        <p>For homes in Baker, we recommend pressure washing at least once a year due to the region’s humidity, which can lead to mold and mildew buildup. If you have lots of trees or live near water, you might consider more frequent cleanings.</p>
+                        <p>For homes in [[ location ]], we recommend pressure washing at least once a year due to the region’s humidity, which can lead to mold and mildew buildup. If you have lots of trees or live near water, you might consider more frequent cleanings.</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -340,63 +356,53 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> 
+        </section>
 
-    <section id="gallery" class="gallery">
-        <div class="container">
-            <h2>Our Work</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <div class="before-after">
-                        <img src="/static/pictures/nodirty2.png" alt="Gallery before - Patio cleaning">
-                        <img src="/static/pictures/noclean5.png" alt="Gallery after - Patio cleaning">
+        <!-- Gallery Section -->
+        <section id="gallery" class="gallery">
+            <div class="container">
+                <h2>Our Work</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <div class="before-after">
+                            <img src="/static/pictures/nodirty2.png" alt="Before - Patio cleaning">
+                            <img src="/static/pictures/noclean5.png" alt="After - Patio cleaning">
+                        </div>
+                        <p class="label">Patio Cleaning</p>
                     </div>
-                    <p class="label">Patio Cleaning</p>
-                </div>
-                <div class="gallery-item">
-                    <div class="before-after">
-                        <img src="/static/pictures/carportdirty.png" alt="Gallery before - Carport cleaning">
-                        <img src="/static/pictures/Carportclean (1).png" alt="Gallery after - Carport cleaning">
-                    </div>
-                    <p class="label">Carport Cleaning</p>
-                </div>
-                <div class="gallery-item">
-                    <div class="before-after">
-                        <img src="/static/pictures/melissa1.png" alt="Gallery before - Driveway cleaning">
-                        <img src="/static/pictures/melissa2.png" alt="Gallery after - Driveway cleaning">
-                    </div>
-                    <p class="label">Driveway Cleaning</p>
+                    <!-- Additional gallery items... -->
                 </div>
             </div>
-        </div>
-    </section>
-    
+        </section>
+        
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2>Contact Us</h2>
+                <form id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html">
+                    <input type="hidden" name="bot-field" />
+                    <input type="hidden" name="form-name" value="contact" />
+                    <input type="hidden" name="redirect" value="/thank-you.html" />
 
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Contact Us</h2>
-            <form id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html">
-                <input type="hidden" name="bot-field" />
-                <input type="hidden" name="form-name" value="contact" />
-                <input type="hidden" name="redirect" value="/thank-you.html" />
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required aria-required="true">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required aria-required="true">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" required aria-required="true"></textarea>
+                    </div>
 
-                <div class="form-group">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required aria-required="true">
-                </div>
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required aria-required="true">
-                </div>
-                <div class="form-group">
-                    <label for="message">Message:</label>
-                    <textarea id="message" name="message" required aria-required="true"></textarea>
-                </div>
-
-                <button type="submit">Send</button>
-            </form>
-        </div>
-    </section>
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+        </section>
+    </main>
     
     <footer>
         <div class="container footer-container">
@@ -423,8 +429,12 @@
                 </a>
             </div>
         </div>
-        <p>&copy; 2024 Around the House. All rights reserved.</p>
+        <p>&copy; <span id="year"></span> Around the House. All rights reserved.</p>
     </footer>
-</body>
 
+    <!-- Dynamic Year Script -->
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
 </html>

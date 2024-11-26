@@ -2,24 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Professional Junk Removal, Moving Services, and Pressure Washing in St. Amant. Around the House offers reliable and affordable services to make your life easier. Get a free quote today!">
+    <meta name="description" content="Professional Junk Removal, Moving Services, and Pressure Washing in {{ location }}. Around the House offers reliable and affordable services to make your life easier. Get a free quote today!">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="John Borg and Damien Granger">
-    <meta name="keywords" content="junk removal St. Amant, moving services St. Amant, pressure washing St. Amant, local movers St. Amant, hauling services St. Amant, eco-friendly junk removal St. Amant, affordable movers St. Amant, pressure washing services St. Amant, professional moving company St. Amant">
+    <meta name="keywords" content="junk removal {{ location }}, moving services {{ location }}, pressure washing {{ location }}, local movers {{ location }}, hauling services {{ location }}, eco-friendly junk removal {{ location }}, affordable movers {{ location }}, pressure washing services {{ location }}, professional moving company {{ location }}">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    <title>Reliable Junk Removal, Moving Services, and Pressure Washing in St. Amant | Around the House</title>
+    <title>Reliable Junk Removal, Moving Services, and Pressure Washing in {{ location }} | Around the House</title>
 
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Reliable Junk Removal, Moving Services, and Pressure Washing in St. Amant | Around the House">
-    <meta property="og:description" content="Around the House offers professional junk removal, moving services, and pressure washing in St. Amant. Let us handle the heavy lifting for you! Get a free quote today.">
+    <meta property="og:title" content="Reliable Junk Removal, Moving Services, and Pressure Washing in {{ location }} | Around the House">
+    <meta property="og:description" content="Around the House offers professional junk removal, moving services, and pressure washing in {{ location }}. Let us handle the heavy lifting for you! Get a free quote today.">
     <meta property="og:image" content="https://aroundthehouse.services/static/Color%20logo%20-%20no%20background.png">
-    <meta property="og:url" content="https://aroundthehouse.services/st-amant">
+    <meta property="og:url" content="https://aroundthehouse.services/{{ location_slug }}">
     <meta property="og:type" content="website">
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Reliable Junk Removal, Moving Services, and Pressure Washing in St. Amant | Around the House">
-    <meta name="twitter:description" content="Need junk removal, moving services, or pressure washing in St. Amant? Around the House is here to help. Get a free quote today!">
+    <meta name="twitter:title" content="Reliable Junk Removal, Moving Services, and Pressure Washing in {{ location }} | Around the House">
+    <meta name="twitter:description" content="Need junk removal, moving services, or pressure washing in {{ location }}? Around the House is here to help. Get a free quote today!">
     <meta name="twitter:image" content="https://aroundthehouse.services/static/Color%20logo%20-%20no%20background.png">
 
     <!-- Structured Data (Schema.org) -->
@@ -28,22 +28,22 @@
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
         "name": "Around the House",
-        "url": "https://aroundthehouse.services/st-amant",
+        "url": "https://aroundthehouse.services/{{ location_slug }}",
         "logo": "https://aroundthehouse.services/static/Color%20logo%20-%20no%20background.png",
         "image": "https://aroundthehouse.services/static/Color%20logo%20-%20no%20background.png",
-        "description": "Around the House provides professional junk removal, moving services, and pressure washing in St. Amant, Louisiana.",
+        "description": "Around the House provides professional junk removal, moving services, and pressure washing in {{ location }}, Louisiana.",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "3101 Highland Rd",
-          "addressLocality": "St. Amant",
+          "addressLocality": "{{ location }}",
           "addressRegion": "LA",
           "postalCode": "70802",
           "addressCountry": "US"
         },
         "geo": {
           "@type": "GeoCoordinates",
-          "latitude": "30.2144",
-          "longitude": "-90.8533"
+          "latitude": "{{ latitude }}",
+          "longitude": "{{ longitude }}"
         },
         "telephone": "+1-225-249-5700",
         "email": "contact@aroundthehouse.services",
@@ -56,7 +56,7 @@
         ],
         "areaServed": {
           "@type": "City",
-          "name": "St. Amant"
+          "name": "{{ location }}"
         },
         "hasMap": "https://www.google.com/maps/place/3101+Highland+Rd,+Baton+Rouge,+LA+70802",
         "makesOffer": [
@@ -66,7 +66,7 @@
               "@type": "Service",
               "name": "Junk Removal",
               "description": "Efficient junk removal services to help you declutter your space.",
-              "areaServed": "St. Amant"
+              "areaServed": "{{ location }}"
             },
             "priceSpecification": {
               "@type": "PriceSpecification",
@@ -80,7 +80,7 @@
               "@type": "Service",
               "name": "Moving Services",
               "description": "Professional moving services to make your relocation stress-free.",
-              "areaServed": "St. Amant"
+              "areaServed": "{{ location }}"
             },
             "priceSpecification": {
               "@type": "PriceSpecification",
@@ -94,7 +94,7 @@
               "@type": "Service",
               "name": "Pressure Washing",
               "description": "High-quality pressure washing services to keep your home looking brand new.",
-              "areaServed": "St. Amant"
+              "areaServed": "{{ location }}"
             },
             "priceSpecification": {
               "@type": "PriceSpecification",
@@ -107,7 +107,7 @@
     </script>
 
     <!-- Additional SEO Meta Tags -->
-    <link rel="canonical" href="https://aroundthehouse.services/st-amant/">
+    <link rel="canonical" href="https://aroundthehouse.services/{{ location_slug }}/">
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-..." crossorigin="anonymous">
@@ -158,8 +158,8 @@
         <section class="hero">
             <div class="hero-overlay"></div>
             <div class="hero-content container">
-                <h1>Professional Junk Removal, Moving Services, and Pressure Washing in St. Amant</h1>
-                <p>Let Around the House handle all your home service needs in St. Amant. Get a free quote today!</p>
+                <h1>Professional Junk Removal, Moving Services, and Pressure Washing in {{ location }}</h1>
+                <p>Let Around the House handle all your home service needs in {{ location }}. Get a free quote today!</p>
                 <div class="cta-buttons">
                     <button class="primary" onclick="window.location.href='#services'">Get a Free Quote</button>
                     <button class="secondary" onclick="window.location.href='#services'">Our Services</button>
@@ -171,23 +171,23 @@
         <!-- Services Section -->
         <section id="services" class="services">
             <div class="container">
-                <h2>Our Services in St. Amant</h2>
+                <h2>Our Services in {{ location }}</h2>
                 <div class="service-list">
                     <div class="service-item">
                         <i class="fas fa-dumpster" style="font-size: 64px; color: var(--denim);"></i>
-                        <h3>St. Amant Junk Removal</h3>
+                        <h3>{{ location }} Junk Removal</h3>
                         <p>Efficient and eco-friendly junk removal services to help you declutter your home or office.</p>
                         <button onclick="window.location.href='/junk-removal.html'">Get an Estimate</button>
                     </div>
                     <div class="service-item">
                         <i class="fas fa-truck-moving" style="font-size: 64px; color: var(--jaffa);"></i>
-                        <h3>St. Amant Moving Services</h3>
+                        <h3>{{ location }} Moving Services</h3>
                         <p>Professional moving services to make your relocation smooth and stress-free.</p>
                         <button onclick="window.location.href='/moving-services.html'">Get an Estimate</button>
                     </div>
                     <div class="service-item">
                         <i class="fas fa-water" style="font-size: 64px; color: var(--yellow-orange);"></i>
-                        <h3>St. Amant Pressure Washing</h3>
+                        <h3>{{ location }} Pressure Washing</h3>
                         <p>Keep your property looking its best with our professional pressure washing services.</p>
                         <button onclick="window.location.href='/pressure-washing.html'">Get an Estimate</button>
                     </div>
@@ -211,10 +211,10 @@
                     </div>
                     <div class="carousel-container">
                         <div class="carousel">
-                            <img src="/static/pictures/story1.jpg" alt="Our Team at Work in St. Amant">
+                            <img src="/static/pictures/story1.jpg" alt="Our Team at Work in {{ location }}">
                             <img src="/static/pictures/story2.jpg" alt="Around the House Team">
-                            <img src="/static/pictures/story3.jpg" alt="Providing Services in St. Amant">
-                            <img src="/static/pictures/story4.jpg" alt="Community Engagement in St. Amant">
+                            <img src="/static/pictures/story3.jpg" alt="Providing Services in {{ location }}">
+                            <img src="/static/pictures/story4.jpg" alt="Community Engagement in {{ location }}">
                         </div>
                     </div>
                 </div>
@@ -222,7 +222,7 @@
                 <div class="about-values">
                     <h3>Our Mission & Values</h3>
                     <p>
-                        Our mission is simple: to provide top-quality home care services to the St. Amant community with <strong>integrity</strong>, <strong>transparency</strong>, and a personal touch. We believe in building lasting relationships with our clients, many of whom have become like family. We take pride in offering transparent, no-surprise quotes, and we strive to exceed expectations on every job, whether it’s pressure washing, junk removal, or lawn care.
+                        Our mission is simple: to provide top-quality home care services to the {{ location }} community with <strong>integrity</strong>, <strong>transparency</strong>, and a personal touch. We believe in building lasting relationships with our clients, many of whom have become like family. We take pride in offering transparent, no-surprise quotes, and we strive to exceed expectations on every job, whether it’s pressure washing, junk removal, or lawn care.
                     </p>
                     <div class="values-list">
                         <div class="value-item">
@@ -238,7 +238,7 @@
                         <div class="value-item">
                             <i class="fas fa-users" style="color: var(--yellow-orange); font-size: 48px;"></i>
                             <h4>Community</h4>
-                            <p>We are proud members of the St. Amant community and believe in giving back through exceptional service and local involvement.</p>
+                            <p>We are proud members of the {{ location }} community and believe in giving back through exceptional service and local involvement.</p>
                         </div>
                     </div>
                 </div>
@@ -247,14 +247,14 @@
                     <h3>Meet the Team</h3>
                     <div class="team-grid">
                         <div class="team-member">
-                            <img src="/static/pictures/story2.jpg" alt="John Borg, Founder of Around the House in St. Amant">
+                            <img src="/static/pictures/story2.jpg" alt="John Borg, Founder of Around the House in {{ location }}">
                             <h4>John Borg</h4>
                             <p>John handles website development, branding, and customer relations. His dedication to detail ensures every project reflects the Around the House standard of quality.</p>
                         </div>
                         <div class="team-member">
-                            <img src="/static/pictures/dame.jpg" alt="Damien Granger, Co-founder of Around the House in St. Amant">
+                            <img src="/static/pictures/dame.jpg" alt="Damien Granger, Co-founder of Around the House in {{ location }}">
                             <h4>Damien Granger</h4>
-                            <p>Damien manages social media and marketing, bringing our message to the St. Amant community with creativity and passion.</p>
+                            <p>Damien manages social media and marketing, bringing our message to the {{ location }} community with creativity and passion.</p>
                         </div>
                     </div>
                 </div>
