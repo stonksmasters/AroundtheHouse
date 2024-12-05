@@ -414,7 +414,10 @@ header {
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
-    text-align: left;
+    text-align: center; /* Center align content */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .service-item:hover {
@@ -431,7 +434,7 @@ header {
 
 .service-item img:hover {
     transform: scale(1.05);
-    filter: grayscale(50%); /* Added grayscale effect on hover */
+    filter: grayscale(50%);
 }
 
 .service-item h3 {
@@ -444,6 +447,7 @@ header {
     font-size: 1.1rem;
     line-height: 1.6;
     margin-bottom: 1.5rem;
+    color: var(--dark-gray);
 }
 
 .service-item button {
@@ -461,6 +465,14 @@ header {
     background: var(--yellow-orange);
     transform: translateY(-2px);
 }
+
+/* Adjustments for Icons */
+.service-icon {
+    font-size: 64px;
+    color: var(--denim); /* Default color, can vary */
+    margin-bottom: 1rem;
+}
+
 
 /* Updated About Us Section Styles */
 .about {
@@ -1112,7 +1124,15 @@ footer p {
     .service-item {
         max-width: 100%;
         margin: 1.5rem 0;
-        width: 100%; /* Ensure it takes the full width of the container */
+        width: 100%;
+    }
+
+    .service-item h3 {
+        font-size: 1.6rem;
+    }
+
+    .service-item p {
+        font-size: 1rem;
     }
 
     .about-grid {
@@ -1203,18 +1223,17 @@ footer p {
         max-width: 32%;
     }
 
-    .service-item {
-        max-width: 100%;
-        margin: 1.5rem 0;
-        width: 100%; /* Ensure it takes the full width of the container */
-    }
-
     .service-item h3 {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
     }
 
     .service-item p {
         font-size: 0.9rem;
+    }
+
+    .service-item button {
+        font-size: 0.9rem;
+        padding: 0.6rem 1.2rem;
     }
 
     .inline-cta {
