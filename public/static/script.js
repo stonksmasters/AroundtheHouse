@@ -1,80 +1,86 @@
+// write or paste code here
+
 document.addEventListener("DOMContentLoaded", function () {
-    // Scroll animation for mobile and desktop
-    let sections = document.querySelectorAll("section");
-    const revealSection = () => {
-        sections.forEach(section => {
-            let sectionTop = section.getBoundingClientRect().top;
-            let sectionBottom = section.getBoundingClientRect().bottom;
-            let triggerPoint = window.innerHeight * 0.85;
+  const hostname = window.location.hostname;
+  const isLocal = hostname === "localhost" || hostname === "127.0.0.1";
+  const currentPath = window.location.pathname.replace(/\/$/, ""); // strip trailing slash
+  const storageKey = "locationRedirected";
 
-            if (sectionTop < triggerPoint && sectionBottom > 0) {
-                section.classList.add("visible");
-            } else {
-                section.classList.remove("visible");
-            }
-        });
-    };
-    window.addEventListener("scroll", revealSection);
-    revealSection(); // Initial check to reveal sections already in view
+  // Map of your new service towns
+  const locations = {
+    "jarrell":      "Jarrell",
+    "thrall":       "Thrall",
+    "salado":       "Salado",
+    "taylor":       "Taylor",
+    "hutto":        "Hutto",
+    "georgetown":   "Georgetown",
+    "round-rock":   "Round Rock",
+    "pflugerville": "Pflugerville",
+    "leander":      "Leander",
+    "cedar-park":   "Cedar Park"
+  };
 
-    // Smooth Scroll for Anchor Links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
+  function handleRedirection(userLocation) {
+    const expectedPath = `/${userLocation}`;
+    const isHomePage = currentPath === "" || currentPath === "/" || currentPath === "/index.html";
+    const isOnCorrectPage = currentPath === expectedPath || (isHomePage && userLocation === "jarrell");
 
-            let headerOffset = document.querySelector("header").offsetHeight;
-            let element = document.querySelector(this.getAttribute("href"));
-            let elementPosition = element.getBoundingClientRect().top;
-            let offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    // If we’ve already redirected or user declined, do nothing
+    if (sessionStorage.getItem(storageKey) === "true") return;
 
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: "smooth"
-            });
-
-            // Close the mobile menu after clicking an anchor link
-            if (navMenu.classList.contains("show")) {
-                navMenu.classList.remove("show");
-                navMenu.classList.add("hide");
-            }
-        });
-    });
-
-    // Toggle Navigation Menu
-    const menuToggle = document.getElementById("menu-toggle");
-    const navMenu = document.getElementById("nav-menu");
-    const closeMenu = document.getElementById("close-menu");
-    const header = document.querySelector("header");
-
-    function adjustNavMenuPosition() {
-        navMenu.style.top = `${header.offsetHeight}px`;
+    if (locations[userLocation]) {
+      // If not already on the right page, ask
+      if (!isOnCorrectPage) {
+        const wantsRedirect = confirm(
+          `It looks like you're in ${locations[userLocation]}. Would you like to go to the ${locations[userLocation]} page?`
+        );
+        sessionStorage.setItem(storageKey, "true");
+        if (wantsRedirect) window.location.href = expectedPath;
+      }
+    } else {
+      // Not in service area — send to Jarrell by default
+      const fallback = "/jarrell";
+      if (currentPath !== fallback) {
+        sessionStorage.setItem(storageKey, "true");
+        window.location.href = fallback;
+      }
     }
+  }
 
-    menuToggle.addEventListener("click", function () {
-        if (navMenu.classList.contains("show")) {
-            navMenu.classList.remove("show");
-            navMenu.classList.add("hide");
-        } else {
-            navMenu.classList.remove("hide");
-            navMenu.classList.add("show");
-            adjustNavMenuPosition(); // Adjust the menu position when opened
+  // Try HTML5 Geolocation
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+      pos => {
+        const { latitude: lat, longitude: lon } = pos.coords;
+        // reverse-geocode via BigDataCloud
+        fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lon}&localityLanguage=en`)
+          .then(r => r.json())
+          .then(data => {
+            const city = (data.city || "").toLowerCase().replace(/\s+/g, "-");
+            handleRedirection(city);
+          })
+          .catch(_ => {
+            // on error, fallback
+            if (!sessionStorage.getItem(storageKey)) {
+              sessionStorage.setItem(storageKey, "true");
+              window.location.href = "/jarrell";
+            }
+          });
+      },
+      _err => {
+        // permission denied or other location error
+        if (!sessionStorage.getItem(storageKey)) {
+          sessionStorage.setItem(storageKey, "true");
+          window.location.href = "/jarrell";
         }
-    });
-
-    closeMenu.addEventListener("click", function () {
-        navMenu.classList.remove("show");
-        navMenu.classList.add("hide");
-    });
-
-    // FAQ Toggle
-    document.querySelectorAll(".faq-item h3").forEach(item => {
-        item.addEventListener("click", () => {
-            let parent = item.parentElement;
-            document.querySelectorAll(".faq-item").forEach(faq => {
-                if (faq !== parent) faq.classList.remove("active");
-            });
-            parent.classList.toggle("active");
-        });
-    });
-
+      },
+      { timeout: 10000, maximumAge: 60000 }
+    );
+  } else {
+    // no geolocation support
+    if (!sessionStorage.getItem(storageKey)) {
+      sessionStorage.setItem(storageKey, "true");
+      window.location.href = "/jarrell";
+    }
+  }
 });
