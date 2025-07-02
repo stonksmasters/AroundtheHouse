@@ -907,7 +907,134 @@ footer p {
 .thumbtack-widget #tt-dynamic span {
     font-size: 0.95rem;
 }
+/* Furniture Assembly Estimate */
+#assembly-estimate .form-group {
+    margin-bottom: 0.8rem;
+    width: 100%;
+}
 
+#assembly-estimate .form-group label {
+    margin-bottom: 0.4rem;
+    font-size: 0.95rem;
+    display: block;
+}
+
+#assembly-estimate .form-group input,
+#assembly-estimate .form-group select,
+#assembly-estimate .form-group textarea {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 0.95rem;
+    transition: border-color 0.2s;
+}
+
+#assembly-estimate .form-group input:focus,
+#assembly-estimate .form-group select:focus,
+#assembly-estimate .form-group textarea:focus {
+    border-color: var(--denim);
+    outline: none;
+}
+
+#assembly-estimate button[type="submit"] {
+    background: var(--bay-of-many);
+    color: var(--white);
+    padding: 0.7rem 1.2rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    transition: background 0.2s, transform 0.2s;
+    cursor: pointer;
+}
+
+#assembly-estimate button[type="submit"]:hover {
+    background: var(--denim);
+    transform: translateY(-2px);
+}
+
+/* Pressure Washing Estimate */
+#pressure-washing-estimate .form-group {
+    margin-bottom: 0.8rem;
+    width: 100%;
+}
+
+#pressure-washing-estimate .form-group label {
+    margin-bottom: 0.4rem;
+    font-size: 0.95rem;
+    display: block;
+}
+
+#pressure-washing-estimate .form-group input,
+#pressure-washing-estimate .form-group select,
+#pressure-washing-estimate .form-group textarea {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 0.95rem;
+    transition: border-color 0.2s;
+}
+
+#pressure-washing-estimate .form-group input:focus,
+#pressure-washing-estimate .form-group select:focus,
+#pressure-washing-estimate .form-group textarea:focus {
+    border-color: var(--denim);
+    outline: none;
+}
+
+#pressure-washing-estimate button[type="submit"] {
+    background: var(--bay-of-many);
+    color: var(--white);
+    padding: 0.7rem 1.2rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    transition: background 0.2s, transform 0.2s;
+    cursor: pointer;
+}
+
+#pressure-washing-estimate button[type="submit"]:hover {
+    background: var(--denim);
+    transform: translateY(-2px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    #assembly-estimate .form-group input,
+    #assembly-estimate .form-group select,
+    #assembly-estimate .form-group textarea,
+    #pressure-washing-estimate .form-group input,
+    #pressure-washing-estimate .form-group select,
+    #pressure-washing-estimate .form-group textarea {
+        font-size: 0.9rem;
+        padding: 0.5rem;
+    }
+
+    #assembly-estimate button[type="submit"],
+    #pressure-washing-estimate button[type="submit"] {
+        font-size: 0.9rem;
+        padding: 0.6rem 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #assembly-estimate .form-group input,
+    #assembly-estimate .form-group select,
+    #assembly-estimate .form-group textarea,
+    #pressure-washing-estimate .form-group input,
+    #pressure-washing-estimate .form-group select,
+    #pressure-washing-estimate .form-group textarea {
+        font-size: 0.85rem;
+        padding: 0.4rem;
+    }
+
+    #assembly-estimate button[type="submit"],
+    #pressure-washing-estimate button[type="submit"] {
+        font-size: 0.85rem;
+        padding: 0.5rem 0.8rem;
+    }
+}
 /* Responsive */
 @media (max-width: 768px) {
     .thank-you-container { padding: 1rem; margin: 15vh auto; }
