@@ -389,97 +389,88 @@ header {
 
 /* Services Section */
 .services {
-    padding: 4rem 0;
-    background: var(--offwhite);
+    padding: 3rem 0;
+    background: var(--white);
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
+
 .services h2 {
-    font-size: 2.75rem;
-    margin-bottom: 2.5rem;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
     color: var(--bay-of-many);
     position: relative;
 }
 
-/* Card Grid */
 .service-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2.5rem;
-    padding: 0 1rem;
+    gap: 2rem;
 }
 
-/* Service Card */
 .service-item {
-    background: linear-gradient(135deg, #ffffff 0%, #f7f8fa 100%);
-    border-left: 6px solid var(--jaffa);
+    background: var(--offwhite);
+    padding: 2rem;
     border-radius: 12px;
-    padding: 2.5rem 1.5rem;
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-left-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center; /* Center align content */
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
 }
+
 .service-item:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
-    border-left-color: var(--denim);
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Icon Badge */
-.service-item .service-icon {
-    position: relative;
-    font-size: 3.5rem;
-    color: var(--denim);
-    margin-bottom: 1.25rem;
-    z-index: 1;
-}
-.service-item .service-icon::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 4.5rem;
-    height: 4.5rem;
-    background: var(--offwhite);
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    box-shadow: inset 0 2px 6px rgba(0,0,0,0.05);
-    z-index: -1;
+.service-item img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-/* Title & Text */
+.service-item img:hover {
+    transform: scale(1.05);
+    filter: grayscale(50%);
+}
+
 .service-item h3 {
-    font-size: 1.9rem;
+    font-size: 1.8rem;
     margin-bottom: 1rem;
     color: var(--bay-of-many);
 }
+
 .service-item p {
     font-size: 1.1rem;
     line-height: 1.6;
-    margin-bottom: 1.75rem;
+    margin-bottom: 1.5rem;
     color: var(--dark-gray);
-    max-width: 90%;
 }
 
-/* Call-to-Action Button */
 .service-item button {
     background: var(--jaffa);
-    color: var(--white);
     border: none;
-    padding: 0.9rem 1.75rem;
-    font-size: 1rem;
-    font-weight: 600;
-    border-radius: 6px;
+    padding: 0.8rem 1.5rem;
     cursor: pointer;
-    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+    font-size: 1rem;
+    color: var(--white);
+    transition: background 0.3s, transform 0.3s;
+    border-radius: 4px;
 }
+
 .service-item button:hover {
     background: var(--yellow-orange);
     transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+/* Adjustments for Icons */
+.service-icon {
+    font-size: 64px;
+    color: var(--denim); /* Default color, can vary */
+    margin-bottom: 1rem;
 }
 
 
